@@ -1,21 +1,16 @@
 <template>
-    <div data-aos="fade-up" class="main-page container">
-        <div class="row g-3 justify-content-lg-between">
-            <div class="col-lg-3 col-md-12">
-                <div class="text-after-line text-muted2">
-                    About Us
-                </div>
-                <div class="header">About Us</div>
+    <div data-aos="fade-up" class="container">
+        <div class="row g-3 justify-content-lg-center">
 
-                <nuxt-link to="/about" class="btn btn-theme mt-3 hover-tiltX">Learn More</nuxt-link>
+            <div class="col-lg-6 text-muted fw-bold info-text text-lg-end order-2 order-md-1">
+                Divine Shelter Ltd is a leading construction company in the Middle East and Africa, established in 2000.
+                The company strives to provide high-quality services by applying the latest international standards in
+                the fields of quality and safety, and works to achieve sustainable development goals in all its projects
+                to build a better future.
             </div>
 
-            <div class="col-lg-6" style="font-size: 18px; text-align: justify;">
-                {{ pageContents.regularText }}
-            </div>
-
-            <div class="col-12 mt-5">
-                <NuxtImg src="/images/landing/about.webp" style="width: 100%;" />
+            <div class="col-lg-6 order-1 order-md-2">
+                <NuxtImg src="/images/about-us-brief.jpg" style="width: 100%;" />
             </div>
 
         </div>
@@ -23,25 +18,24 @@
 </template>
 
 <script lang="ts" setup>
-import pageContents from '~/stores/pageContents/about.json'
 
 </script>
 
 
 <style scoped>
-.main-page {
-    padding-block: 60px;
-    min-height: 100vh;
+.info-text {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1;
 }
 
-.header {
-    font-size: 40px;
-    color: #333;
-}
 
 @media (max-width: 767px) {
-    .header {
+
+    .info-text {
         font-size: 24px;
     }
+
+
 }
 </style>

@@ -13,6 +13,16 @@ export const useTemplateStore = defineStore('template', () => {
   }
 
 
+  interface AccountMenuInterface {
+    title: string,
+    routePath: string,
+    hasDropDown?: Boolean
+    dropdownItems?: any[]
+    relatedRoutes?: string[]
+  }
+
+
+
   const navBarMenus: NavBarMenuInterface[] = [
 
     {
@@ -20,12 +30,19 @@ export const useTemplateStore = defineStore('template', () => {
       routePath: '/',
     },
     {
-      title: 'About',
-      routePath: '/about',
+      title: 'About Us',
+      routePath: '/about-us',
+    },
+    {
+      title: 'Services',
+      routePath: '/',
       hasDropDown: true,
       dropdownItems: [
-        { title: "Who We Are", routePath: '/about' },
-        { title: "Advisory Board", routePath: '/advisory-board' },
+        { title: "Building Construction", routePath: '/services/building-construction' },
+        { title: "Real Estate and Property Sales", routePath: '/services/real-estates' },
+        { title: "Project Management", routePath: '/services/project-management' },
+        { title: "Training", routePath: '/services/training' },
+        { title: "Hydraform / Alternative Building Systems", routePath: '/services/hydraform-alternative-building-systems' },
       ],
       relatedRoutes: [
         '/about',
@@ -33,25 +50,18 @@ export const useTemplateStore = defineStore('template', () => {
       ]
     },
     {
-      title: 'Recognition',
-      routePath: '/recognition'
+      title: 'Building Materials',
+      routePath: '/building-materials'
     },
+
     {
-      title: 'Membership',
-      routePath: '/membership'
+      title: 'Projects',
+      routePath: '/projects'
     },
+
     {
-      title: 'Resources',
-      routePath: '/mentorship',
-      hasDropDown: true,
-      dropdownItems: [
-        { title: "Mentorship", routePath: '/mentorship' },
-        { title: "Facilitators", routePath: '/facilitators' },
-      ],
-      relatedRoutes: [
-        '/mentorship',
-        '/facilitators'
-      ]
+      title: 'Request a Quote',
+      routePath: '/request-a-quote',
     },
     {
       title: 'Blog',
@@ -64,13 +74,11 @@ export const useTemplateStore = defineStore('template', () => {
   ]
 
 
-  interface AccountMenuInterface {
-    title: string,
-    routePath: string,
-    hasDropDown?: Boolean
-    dropdownItems?: any[]
-    relatedRoutes?: string[]
+  const getRelatedRoutes = (dropdownItems: any[]) => {
+    return dropdownItems.map((x: any) => x.routePath)
   }
+
+
 
 
   const accountMenus: AccountMenuInterface[] = [
@@ -157,5 +165,12 @@ export const useTemplateStore = defineStore('template', () => {
   }
 
 
-  return { navBarMenus, accountMenus, themeColors, activateToolTip, vueSelectPositioning }
+  return {
+    navBarMenus,
+    accountMenus,
+    themeColors,
+    activateToolTip,
+    vueSelectPositioning,
+    getRelatedRoutes,
+  }
 })

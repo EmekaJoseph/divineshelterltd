@@ -2,18 +2,19 @@
     <div data-bs-scroll="true" class="offcanvas offcanvas-start" tabindex="-1" id="menuOffcanvas"
         aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">MENU</h5>
             <button ref="btnX" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
             <ul class="list-group list-group-flush">
                 <li v-for="({ title, routePath, hasDropDown, dropdownItems }, i) in templateStore.navBarMenus" :key="i"
-                    class="list-group-item border-0 dismiss-on-click">
+                    class="list-group-item list-group-item-main border-0 dismiss-on-click">
                     <nuxt-link :to="routePath">{{ title }}</nuxt-link>
                     <!-- <div v-if="hasDropDown" style="border-left: 1px solid var(--bs-border-color)"> -->
                     <div v-if="hasDropDown">
                         <ul class="list-group list-group-flush">
-                            <li v-for="dropdownItem in dropdownItems" class="list-group-item border-0">
+                            <li v-for="dropdownItem in dropdownItems"
+                                class="list-group-item list-group-item-sub border-0 small">
                                 <i class="bi bi-dash"></i>
                                 <nuxt-link :to="dropdownItem.routePath">
                                     {{ dropdownItem.title }}
@@ -27,9 +28,7 @@
 
                 <hr style="color: var(--bs-border-color);">
 
-                <li class="list-group-item border-0 dismiss-on-click">
-                    <nuxt-link class="btn btn-theme w-100" to="/auth/register">Sign Up</nuxt-link>
-                </li>
+
             </ul>
         </div>
     </div>
@@ -60,12 +59,10 @@ onMounted(() => {
 
 <style scoped>
 .offcanvas {
-    width: 270px;
+    width: 320px;
 }
 
-.list-group-item {
-    border: 0;
-    font-size: 20px;
+.list-group-item-main {
     margin-bottom: 10px;
 }
 

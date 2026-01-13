@@ -6,7 +6,8 @@
             </NuxtLink>
             <button class="navbar-toggler border-0" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas"
                 aria-controls="menuOffcanvas" type="button">
-                <span class="navbar-toggler-icon"></span>
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                <i class="bi bi-list fs-2" :class="{ 'text-white': route.path == '/' && !headerDropped, }"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
@@ -16,6 +17,7 @@
                         <div v-if="hasDropDown" class="dropdown">
                             <button class="nav-link dropdown-toggle" type="button" :id="'triggerId' + i"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" :class="{
+                                    'text-white': route.path == '/' && !headerDropped,
                                     'router-link-active': (relatedRoutes ?? []).includes(route.path)
                                 }">
                                 {{ title }}
@@ -32,18 +34,13 @@
                             </div>
                         </div>
                         <NuxtLink v-else class="nav-link me-2 " :class="{
-                            'text-whit': route.path == '/' && !headerDropped,
+                            'text-white': route.path == '/' && !headerDropped,
                             'router-link-active': (relatedRoutes ?? []).includes(route.path)
                         }" :to="routePath">
                             {{ title }}
                         </NuxtLink>
                     </li>
                 </ul>
-                <div class="d-flex">
-                    <NuxtLink to="/auth/register" class="btn btn-theme nav-link  p-1 px-3">
-                        Register
-                    </NuxtLink>
-                </div>
             </div>
         </div>
     </nav>
