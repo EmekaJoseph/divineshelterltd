@@ -1,0 +1,53 @@
+:root {
+  /* --vs-controls-color: var(--vt-c-white); */
+  /* --vs-border-color: var(--bs-border-color); */
+
+  /* --vs-dropdown-bg: var(--theme-color); */
+  /* --vs-dropdown-color: var(--dynamic-color); */
+  /* --vs-dropdown-option-color:var(--dynamic-color); */
+
+  /* --vs-selected-bg: var(--theme-color); */
+  /* --vs-selected-color: var(--vt-c-white); */
+
+  /* --vs-search-input-color: var(--dynamic-color); */
+
+  --vs-dropdown-option--active-color: #000 !important;
+  --vs-dropdown-option--active-bg: #eeeeee !important;
+  --vs-dropdown-z-index: 9999;
+}
+
+.vs__search {
+  line-height: 1.75rem !important;
+  border: 0px !important;
+}
+
+.vs--single {
+  &:not(.vs--open) .vs__selected + .vs__search {
+    width: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    height: 0;
+  }
+
+  .vs__selected-options {
+    width: 0;
+  }
+
+  .vs__selected {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+    line-height: inherit;
+  }
+}
+
+.vs--multiple {
+  .vs__selected {
+    /* margin-bottom: 5px !important; */
+    padding: 5px !important;
+    font-size: 11px !important;
+  }
+}

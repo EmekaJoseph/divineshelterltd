@@ -13,6 +13,20 @@ export default defineNuxtConfig({
     './plugins/bootstrap.client.ts',
     './plugins/plugins.client.ts'
   ],
+
+  css: [
+    'bootstrap/dist/css/bootstrap.min.css',
+    'bootstrap-icons/font/bootstrap-icons.css',
+    '@vuepic/vue-datepicker/dist/main.css',
+    'sweetalert2/dist/sweetalert2.min.css',
+    'vue3-easy-data-table/dist/style.css',
+    // '@marcoschulte/vue3-progress/style',
+    'animate.css',
+    'vue3-carousel/carousel.css',
+    // 'vue-tel-input/vue-tel-input.css',
+    'vue-select/dist/vue-select.css',
+    '~/layouts/styles/custom.css'
+  ],
 })
 
 
@@ -33,5 +47,6 @@ export default defineNuxtConfig({
 - npm install maska
 - npm install vue-select@beta
 - npx nuxt module add image
+- npm i --save-dev @types/node
 
 */

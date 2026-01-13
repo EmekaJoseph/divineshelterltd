@@ -1,0 +1,47 @@
+/* easytable loader */
+.lds-ring div {
+  border-color: var(--theme-color) transparent transparent transparent !important;
+}
+
+
+.vue3-easy-data-table__body{
+  min-height: 100vh;
+}
+
+.vue3-easy-data-table, .vue3-easy-data-table__main.fixed-header,
+.vue3-easy-data-table__footer{
+  border-radius: 7px !important;
+}
+
+
+.vue3-easy-data-table__body td {
+  border: none !important;
+  padding-block: 20px !important;
+  /* background-color: transparent !important; */
+}
+
+.vue3-easy-data-table__main.fixed-header th {
+  border: none !important;
+  text-transform: uppercase;
+  padding-block: 15px !important;
+  background-color: #F8F8FD !important;
+ 
+}
+
+.vue3-easy-data-table__footer {
+  border: none !important;
+  padding-block: 20px !important;
+}
+
+.easy-checkbox input[type=checkbox]:checked+label:before {
+  background: var(--theme-color) !important;
+}
+
+.easy-checkbox input[type=checkbox].allSelected+label:before, .easy-checkbox input[type=checkbox].partSelected+label:before {
+  background: var(--theme-color) !important;
+}
+
+.buttons-pagination .item.button.active{
+  background-color: var(--theme-color) !important;
+  border: none !important;
+}

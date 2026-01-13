@@ -1,0 +1,13 @@
+.dp__range_end,
+.dp__range_start,
+.dp__active_date,
+.dp__pm_am_button,
+.dp__action_select {
+  background: var(--theme-color) !important;
+  color: var(--dp-primary-text-color) !important;
+  border: none !important;
+}
+
+.dp__overlay_cell_active {
+  background: var(--theme-color) !important;
+}

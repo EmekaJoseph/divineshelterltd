@@ -30,6 +30,7 @@
     "vue3-easy-data-table": "^1.5.47"
   },
   "devDependencies": {
+    "@types/node": "^25.0.7",
     "@vueuse/core": "^14.1.0",
     "@vueuse/nuxt": "^14.1.0"
   }
