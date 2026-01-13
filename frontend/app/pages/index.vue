@@ -6,12 +6,16 @@
             <landing-about-us-component />
         </section>
 
+        <section>
+            <landing-services-component />
+        </section>
+
 
     </nuxt-layout>
 </template>
 
 <style scoped>
 section {
-    padding-block: 70px;
+    padding-block: 50px;
 }
 </style>

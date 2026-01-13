@@ -65,7 +65,7 @@ export const useTemplateStore = defineStore('template', () => {
     },
     {
       title: 'Blog',
-      routePath: '/#landing-blog'
+      routePath: '/blog'
     },
     {
       title: 'Contact Us',

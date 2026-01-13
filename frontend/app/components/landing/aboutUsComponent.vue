@@ -1,15 +1,17 @@
 <template>
     <div data-aos="fade-up" class="container">
-        <div class="row g-3 justify-content-lg-center">
-
-            <div class="col-lg-6 text-muted fw-bold info-text text-lg-end order-2 order-md-1">
-                Divine Shelter Ltd is a leading construction company in the Middle East and Africa, established in 2000.
-                The company strives to provide high-quality services by applying the latest international standards in
-                the fields of quality and safety, and works to achieve sustainable development goals in all its projects
-                to build a better future.
+        <div class="row g-3 justify-content-lg-center align-items-center">
+            <div class="text-center fs-5 fw-semibold text-theme text-between-lines mb-3">
+                Who We Are ❔
+            </div>
+            <div class="col-lg-7 text-muted fw-bold info-text text-lg-end order-2 order-md-1">
+                Looking for a smarter way to build? Divine Shelter Ltd combines professional construction services with
+                innovative material supply. We champion Hydraform and alternative building systems that reduce costs,
+                enhance durability, and shorten project timelines. Explore our solutions and training programs for your
+                next project.
             </div>
 
-            <div class="col-lg-6 order-1 order-md-2">
+            <div class="col-lg-5 order-1 order-md-2">
                 <NuxtImg src="/images/about-us-brief.jpg" style="width: 100%;" />
             </div>
 
@@ -24,16 +26,16 @@
 
 <style scoped>
 .info-text {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
-    line-height: 1;
+    line-height: 1.3;
 }
 
 
 @media (max-width: 767px) {
 
     .info-text {
-        font-size: 24px;
+        font-size: 20px;
     }
 
 

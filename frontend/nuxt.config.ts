@@ -14,6 +14,10 @@ export default defineNuxtConfig({
     './plugins/plugins.client.ts'
   ],
 
+  build: {
+    transpile: ['@vuepic/vue-datepicker']
+  },
+
   css: [
     'bootstrap/dist/css/bootstrap.min.css',
     'bootstrap-icons/font/bootstrap-icons.css',
@@ -27,6 +31,64 @@ export default defineNuxtConfig({
     'vue-select/dist/vue-select.css',
     '~/layouts/styles/custom.css'
   ],
+
+
+
+
+  routeRules: {
+    // '/account/**': { ssr: false },
+
+    '/_nuxt/**': {
+      headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
+    },
+    '/_assets/**': {
+      headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
+    },
+    '/_ipx/**': {
+      headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
+    },
+    '/images/**': {
+      headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
+    },
+    '**/*.ico': {
+      headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
+    }
+  },
+
+
+  nitro: { preset: 'static' },
+
+  app: {
+    buildAssetsDir: '/_assets/',
+    head: {
+      title: 'DIVINE SHELTER LTD',
+      // titleTemplate: '%s - DIVINE SHELTER', // This adds suffix to all titles
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+
+        // Open Graph meta tags
+        { property: 'og:title', content: 'Divine Shelter Ltd' },
+        { property: 'og:description', content: 'Divine Shelter Ltd: A professional construction and building materials firm. We deliver durable, cost-efficient projects using innovative Hydraform brick technology and provide expert training. Your trusted partner for quality construction from start to finish.' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https://divineshelterltd.com/' },
+        { property: 'og:image', content: 'https://divineshelterltd.com/images/logo.png' },
+        { property: 'og:keywords', content: 'Building construction services, Building materials supply, Hydraform bricks and alternative building systems, Project Management, Training, ' },
+
+        // Twitter meta tags
+        // { name: 'twitter:card', content: 'summary_large_image' },
+        // { name: 'twitter:title', content: 'Divine Shelter Ltd' },
+        // { property: 'twitter:description', content: 'Divine Shelter Ltd: A professional construction and building materials firm. We deliver durable, cost-efficient projects using innovative Hydraform brick technology and provide expert training. Your trusted partner for quality construction from start to finish.' },
+        // { name: 'twitter:image', content: 'https://divineshelterltd.com/images/WGRC-logo.png' },
+
+        // Fallback description for search engines
+        { name: 'description', content: 'Professional construction firm & materials supplier. We build durable, cost-efficient structures using Hydraform brick technology and offer expert training. Get a quote for your project or material needs today.' }
+
+
+      ]
+    }
+  },
+
 })
 
 
