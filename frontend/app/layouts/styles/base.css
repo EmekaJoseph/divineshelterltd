@@ -9,13 +9,13 @@
   --vt-c-black-soft: #737272;
   --vt-c-black-mute: #282828;
 
-  --theme-color: #293567;
-  --theme-color2: #6e354e;
+  --theme-color: #20546f;
+  --theme-color2: #7ac143;
 
-  --theme-bg-subtle: #29356720;
+  --theme-bg-subtle: #20536f3a;
 
-  --theme-btn: #293567;
-  --theme-btn-hover: #3d466b;
+  --theme-btn: #20546f;
+  --theme-btn-hover: rgb(9, 98, 135);
   --qalendar-theme-color: #773062 !important;
 
   --account-bg: #f5f7fd;
@@ -43,7 +43,7 @@ body {
   transition: color 0.5s, background-color 0.5s;
   /* line-height: 1.6; */
   font-family: "Manrope" "Open Sans", sans-serif;
-  /* font-size: 15px; */
+  font-size: 18px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

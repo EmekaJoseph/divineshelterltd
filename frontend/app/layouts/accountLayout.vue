@@ -12,14 +12,14 @@ const route = useRoute()
 const title = computed(() => {
     const path = route.path.replace(/^\/+|\/+$/g, '')
 
-    if (!path) return 'Women in GRCFP | Home'
+    if (!path) return 'Divine Shelter LTD | Home'
 
     const formattedPath = path
         .split(/[-\/]/)
         .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
         .join(' ')
 
-    return `Women in GRCFP | ${formattedPath}`
+    return `Divine Shelter LTD | ${formattedPath}`
 })
 
 useSeoMeta({

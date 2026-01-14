@@ -1,13 +1,18 @@
 <template>
     <nuxt-layout name="landing-layout">
+
         <landing-hero-component />
 
         <section>
-            <landing-about-us-component />
+            <landing-about-us />
+        </section>
+
+        <section class="bg-light-subtle">
+            <landing-aims-and-objectives />
         </section>
 
         <section>
-            <landing-services-component />
+            <landing-our-services />
         </section>
 
 

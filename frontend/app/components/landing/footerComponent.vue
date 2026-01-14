@@ -4,26 +4,26 @@
             <div class="row g-3">
                 <div class="col-md-8">
                     <NuxtLink class="navbar-brand" to="/">
-                        <NuxtImg src="/images/WGRC-logo.png" width="35" alt="site_logo" />
+                        <NuxtImg src="/images/divine-shelter-logo.webp" width="70" alt="site_logo" />
                     </NuxtLink>
 
                     <ul class="list-group list-group-flush">
+
+                        <strong>
+                            Divine Shelter Construction Services Ltd
+                        </strong>
+                        <small>Leaders in Alternative Building Technology</small>
                         <li class="list-group-item ">
                             <strong>Address:</strong>
                             <div>
-                                85 Great Portland Street First Floor London W1W 7LT, United Kingdom.
+                                120 Epe/Ijebu-Ode Expressway, Odomola, Epe, Lagos State
                             </div>
                         </li>
 
                         <li class="list-group-item ">
-                            21 Gillabbey Terrace, Gillabbey Street, Cork,
-                            T12 KPN4, Republic of Ireland
-                        </li>
-
-                        <li class="list-group-item ">
                             <strong>Contact:</strong>
-                            <div> +353877123968, +442078560149 </div>
-                            <div>enquiries@wgrcfp.org</div>
+                            <div> +2348062138803</div>
+                            <div>divineshelterltd@gmail.com</div>
                         </li>
                     </ul>
 
@@ -68,7 +68,11 @@
                     </div>
                 </div>
                 <div class="float-lg-end text-muted mt-3 mt-lg-0">
-                    © {{ new Date().getFullYear() }} WGRCFP. All rights reserved.
+                    © {{ new Date().getFullYear() }} DIVINE SHELTER LTD. All Rights Reserved
+                </div>
+
+                <div class="float-lg-end text-muted mt-3 mt-lg-0" style="font-size: 7px;">
+                    Designed By Proffictech (08139590011)
                 </div>
             </div>
 

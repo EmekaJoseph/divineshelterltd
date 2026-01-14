@@ -1,11 +1,16 @@
 <template>
     <div data-aos="fade-up" class="container">
         <div class="row g-3 justify-content-lg-center align-items-center">
-            <div class="text-center fs-5 fw-semibold text-theme text-between-lines mb-3">
+            <div class="text-center fs-5 fw-semibold text-muted text-between-lines mb-3">
                 Who We Are ❔
             </div>
             <div class="col-lg-7 text-muted fw-bold info-text text-lg-end order-2 order-md-1">
-                Looking for a smarter way to build? Divine Shelter Ltd combines professional construction services with
+                Looking for a smarter way to build? <span
+                    class=" bg-warning-subtle text-theme px-2 text-nowrap fw-bold">
+                    Divine Shelter Limited</span>
+                combines
+                professional construction
+                services with
                 innovative material supply. We champion Hydraform and alternative building systems that reduce costs,
                 enhance durability, and shorten project timelines. Explore our solutions and training programs for your
                 next project.

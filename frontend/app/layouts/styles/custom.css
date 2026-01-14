@@ -57,6 +57,10 @@ textarea::placeholder {
   background-color: var(--theme-color2);
 }
 
+.bg-theme-subtle {
+  background-color: var(--theme-bg-subtle);
+}
+
 .bg-account {
   background-color: var(--account-bg);
 }
@@ -390,20 +394,21 @@ input[type="radio"]:checked + label:before {
 /* .nav-link {
   border: none !important;
   font-size: 14px;
-}
+} */
 
-.nav-link, .nav-link:hover {
-  color: #7C8493 !important;
-}
+/* .nav-link,
+.nav-link:hover {
+  color: #7c8493 !important;
+} */
 
-.nav-tabs .nav-item.show .nav-link,
+/* .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
   font-weight: bolder;
   border-bottom: 2px solid var(--theme-color) !important;
   color: var(--theme-color) !important;
-}
+} */
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .nav-link {
     font-size: 13px;
   }
