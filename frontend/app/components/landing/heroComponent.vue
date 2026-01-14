@@ -85,15 +85,6 @@ const slideItems: { header: string, info: string, image: string }[] = [
     padding-bottom: 40px;
 }
 
-.bg-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
-    z-index: 1;
-}
 
 .container {
     position: relative;
@@ -123,12 +114,6 @@ const slideItems: { header: string, info: string, image: string }[] = [
         background: transparent;
         color: #fff;
         text-align: center;
-    }
-
-
-
-    .bg-overlay {
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
     }
 
 }

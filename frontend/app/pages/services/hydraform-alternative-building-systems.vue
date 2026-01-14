@@ -1,6 +1,8 @@
 <template>
     <nuxt-layout name="landing-layout">
-        About Us
+        <landing-page-title-image image="/images/service-1.webp">
+            Our Services
+        </landing-page-title-image>
 
     </nuxt-layout>
 </template>

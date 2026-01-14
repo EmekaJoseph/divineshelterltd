@@ -10,20 +10,20 @@
                     <ul class="list-group list-group-flush">
 
                         <strong>
-                            Divine Shelter Construction Services Ltd
+                            {{ companyProfile.name }}
                         </strong>
-                        <small>Leaders in Alternative Building Technology</small>
+                        <small> {{ companyProfile.slogan }}</small>
                         <li class="list-group-item ">
                             <strong>Address:</strong>
                             <div>
-                                120 Epe/Ijebu-Ode Expressway, Odomola, Epe, Lagos State
+                                {{ companyProfile.address }}
                             </div>
                         </li>
 
                         <li class="list-group-item ">
                             <strong>Contact:</strong>
-                            <div> +2348062138803</div>
-                            <div>divineshelterltd@gmail.com</div>
+                            <div> {{ companyProfile.phone }}</div>
+                            <div> {{ companyProfile.email }}</div>
                         </li>
                     </ul>
 
@@ -38,7 +38,6 @@
 
 
                 <div class="col-lg-4 d-none d-lg-block">
-                    <!-- Some borders are removed -->
                     <ul class="list-group list-group-flush">
                         <li v-for="menu in templateStore.navBarMenus" class="list-group-item hover-tiltX">
                             <NuxtLink class=" text-decoration-none text-dark " :to="menu.routePath">
@@ -84,6 +83,8 @@
 <script lang="ts" setup>
 
 const templateStore = useTemplateStore()
+
+const companyProfile = useCompanyProfileStore()
 
 </script>
 

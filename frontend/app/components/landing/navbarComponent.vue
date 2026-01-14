@@ -18,7 +18,7 @@
                             <button class="nav-link dropdown-toggle" type="button" :id="'triggerId' + i"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" :class="{
                                     'text-white': route.path == '/' && !headerDropped,
-                                    'router-link-active': (relatedRoutes ?? []).includes(route.path)
+                                    'router-link-active': (templateStore.getRelatedRoutes(dropdownItems)).includes(route.path)
                                 }">
                                 {{ title }}
                             </button>
@@ -79,6 +79,11 @@ onMounted(() => {
 
 
 <style scoped>
+.nav-item {
+    font-size: 16px;
+    margin-left: 6px;
+}
+
 .nav-item .router-link-active,
 .nav-item .router-link-exact-active {
     font-weight: bolder;
@@ -91,7 +96,7 @@ onMounted(() => {
 }
 
 .navbar-nav .nav-link:hover {
-    color: #000 !important;
+    /* color: #000 !important; */
     transform: translateY(-5px);
 }
 

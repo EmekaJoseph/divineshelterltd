@@ -74,8 +74,8 @@ export const useTemplateStore = defineStore('template', () => {
   ]
 
 
-  const getRelatedRoutes = (dropdownItems: any[]) => {
-    return dropdownItems.map((x: any) => x.routePath)
+  const getRelatedRoutes = (dropdownItems: any) => {
+    return dropdownItems?.map((x: any) => x.routePath)
   }
 
 
