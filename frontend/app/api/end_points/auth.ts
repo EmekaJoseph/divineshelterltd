@@ -1,22 +1,15 @@
-import { $instance, $instanceForm } from '../instances'
+import { $instance } from '../instances'
 
 export default {
-
-    register(data: any) {
-        return $instance.post(`register`, JSON.stringify(data))
-    },
-
-
     login(data: any) {
-        return $instance.post(`login`, JSON.stringify(data))
+        return $instance.post(`login`, data)
     },
-
 
     logout() {
-        return $instance.get(`logout`)
+        return $instance.post(`logout`)
     },
 
-    profile() {
-        return $instance.get(`profile`)
+    user() {
+        return $instance.get(`user`)
     },
 }

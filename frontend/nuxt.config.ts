@@ -3,12 +3,14 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
-  modules: ['@pinia/nuxt',
+  modules: [
+    '@pinia/nuxt',
     '@vueuse/nuxt',
     'nuxt-aos',
     'vue3-carousel-nuxt',
     '@nuxt/image',
   ],
+
   plugins: [
     './plugins/bootstrap.client.ts',
     './plugins/plugins.client.ts'
@@ -24,16 +26,12 @@ export default defineNuxtConfig({
     '@vuepic/vue-datepicker/dist/main.css',
     'sweetalert2/dist/sweetalert2.min.css',
     'vue3-easy-data-table/dist/style.css',
-    // '@marcoschulte/vue3-progress/style',
     'animate.css',
     'vue3-carousel/carousel.css',
     // 'vue-tel-input/vue-tel-input.css',
     'vue-select/dist/vue-select.css',
     '~/layouts/styles/custom.css'
   ],
-
-
-
 
   routeRules: {
     // '/account/**': { ssr: false },
@@ -55,14 +53,16 @@ export default defineNuxtConfig({
     }
   },
 
-
-  nitro: { preset: 'static' },
+  nitro: {
+    prerender: {
+      crawlLinks: false,
+    }
+  },
 
   app: {
     buildAssetsDir: '/_assets/',
     head: {
       title: 'DIVINE SHELTER LTD',
-      // titleTemplate: '%s - DIVINE SHELTER', // This adds suffix to all titles
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -83,8 +83,6 @@ export default defineNuxtConfig({
 
         // Fallback description for search engines
         { name: 'description', content: 'Professional construction firm & materials supplier. We build durable, cost-efficient structures using Hydraform brick technology and offer expert training. Get a quote for your project or material needs today.' }
-
-
       ]
     }
   },
