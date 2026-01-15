@@ -12,4 +12,8 @@ export default {
     user() {
         return $instance.get(`user`)
     },
+
+    changePassword(data: any) {
+        return $instance.post(`change-password`, data)
+    },
 }

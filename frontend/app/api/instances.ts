@@ -1,6 +1,6 @@
 import axios from 'axios';
-// @ts-ignore
 import Cookies from 'js-cookie';
+
 // const { progress, isLoading, start, finish, clear } = useLoadingIndicator({
 //     duration: 2000,
 //     throttle: 200,
@@ -11,8 +11,8 @@ import Cookies from 'js-cookie';
 
 
 // const hostURL = import.meta.env.VITE_API_URL;
-const hostURL = 'https://attendly-backend.onrender.com';
-const apiURL = `${hostURL}/api/alt-auth/`;
+const hostURL = 'http://localhost:8888';
+const apiURL = `${hostURL}/api/`;
 
 const getHeaders = (type: 'json' | 'form') => ({
     Accept: 'application/json',
@@ -31,8 +31,10 @@ const $instanceSilent = createAxiosInstance('json');
 const $instanceForm = createAxiosInstance('form');
 
 const setAuthAndStartProgress = (config: any) => {
-    const token = Cookies.get('');
-    if (token) config.headers.Authorization = `Bearer ${token}`;
+    if (process.client) {
+        const token = Cookies.get('wigrcMorgnas#Tkn');
+        if (token) config.headers.Authorization = `Bearer ${token}`;
+    }
 
     // start({ force: true })
     // progresses.push(useProgress().start());

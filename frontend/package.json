@@ -18,6 +18,7 @@
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
     "country-state-city": "^3.2.1",
+    "js-cookie": "^3.0.5",
     "maska": "^3.2.0",
     "nuxt": "^4.2.2",
     "nuxt-aos": "^1.2.5",
@@ -35,3 +36,4 @@
     "@vueuse/nuxt": "^14.1.0"
   }
 }
+

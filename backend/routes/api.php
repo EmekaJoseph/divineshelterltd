@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\BlogController;
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
 Route::get('/user', [AuthController::class, 'user'])->middleware('auth:sanctum');
+Route::post('/change-password', [AuthController::class, 'changePassword'])->middleware('auth:sanctum');
 
 // Visitor tracking routes (public)
 Route::post('/visitors', [VisitorController::class, 'store']);
