@@ -1,34 +1,36 @@
 <template>
-  <div class="login-wrapper">
-    <div class="login-card">
-        <div class="brand">
-            <h2>Divine Shelter</h2>
-            <p>Admin Portal</p>
-        </div>
-        <form @submit.prevent="handleLogin">
-            <div class="form-group">
-                <label>Email Address</label>
-                <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                    <input type="email" v-model="form.email" class="form-control" placeholder="admin@example.com" required>
-                </div>
+    <div class="login-wrapper">
+        <div class="login-card">
+            <div class="brand">
+                <h2>Divine Shelter</h2>
+                <p>Admin Portal</p>
             </div>
-            
-            <div class="form-group mt-3">
-                <label>Password</label>
-                <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                    <input type="password" v-model="form.password" class="form-control" placeholder="••••••••" required>
+            <form @submit.prevent="handleLogin">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                        <input type="email" v-model="form.email" class="form-control" placeholder="admin@example.com"
+                            required>
+                    </div>
                 </div>
-            </div>
 
-            <button type="submit" class="btn-login" :disabled="loading">
-                <span v-if="loading" class="spinner-border spinner-border-sm me-2"></span>
-                {{ loading ? 'Signing in...' : 'Sign In' }}
-            </button>
-        </form>
+                <div class="form-group mt-3">
+                    <label>Password</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                        <input type="password" v-model="form.password" class="form-control" placeholder="••••••••"
+                            required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-login" :disabled="loading">
+                    <span v-if="loading" class="spinner-border spinner-border-sm me-2"></span>
+                    {{ loading ? 'Signing in...' : 'Sign In' }}
+                </button>
+            </form>
+        </div>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -38,7 +40,6 @@ import api from '~/api/end_points/auth';
 import Swal from 'sweetalert2';
 
 definePageMeta({
-    layout: 'login-and-register',
     middleware: 'auth'
 });
 
@@ -55,7 +56,7 @@ const handleLogin = async () => {
     try {
         const { data } = await api.login(form.value);
         authStore.login(data.token);
-        
+
         const { data: user } = await api.user();
         authStore.person = user;
 
@@ -66,7 +67,7 @@ const handleLogin = async () => {
             timer: 1500,
             showConfirmButton: false
         });
-        
+
         router.push('/admin');
     } catch (error: any) {
         Swal.fire({
@@ -95,9 +96,9 @@ const handleLogin = async () => {
     border-radius: 16px;
     width: 100%;
     max-width: 400px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .brand {
@@ -140,7 +141,7 @@ const handleLogin = async () => {
     border-color: #e2e8f0;
 }
 
-.form-control:focus + .input-group-text {
+.form-control:focus+.input-group-text {
     border-color: #4299e1;
 }
 
