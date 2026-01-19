@@ -20,16 +20,17 @@ class QuoteController extends Controller
             'email' => 'required|email|max:255',
             'phone' => 'required|string|max:20',
             'project_details' => 'required|string',
-            'image' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5120' // 5MB max
+            'file' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5120' // 5MB max
         ]);
 
         $imagePath = null;
 
         // Handle file upload
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $filename = time() . '_' . $file->getClientOriginalName();
-            $imagePath = $file->storeAs('quotes', $filename, 'public');
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+             $fileName = time() . '.' . $file->extension();
+            $file->move(public_path('uploads/quotes'), $fileName);
+            $imagePath = 'uploads/quotes/' . $fileName;
         }
 
         $quote = Quote::create([

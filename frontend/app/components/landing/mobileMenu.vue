@@ -8,14 +8,14 @@
         <div class="offcanvas-body">
             <ul class="list-group list-group-flush">
                 <li v-for="({ title, routePath, hasDropDown, dropdownItems }, i) in templateStore.navBarMenus" :key="i"
-                    class="list-group-item list-group-item-main border-0 dismiss-on-click">
+                    class="list-group-item list-group-item-main border- dismiss-on-click">
                     <nuxt-link :to="routePath">{{ title }}</nuxt-link>
                     <!-- <div v-if="hasDropDown" style="border-left: 1px solid var(--bs-border-color)"> -->
                     <div v-if="hasDropDown">
                         <ul class="list-group list-group-flush">
                             <li v-for="dropdownItem in dropdownItems"
-                                class="list-group-item list-group-item-sub border-0 small">
-                                <i class="bi bi-dash"></i>
+                                class="list-group-item list-group-item-sub border- small">
+                                <i class="bi bi-dot"></i>
                                 <nuxt-link :to="dropdownItem.routePath">
                                     {{ dropdownItem.title }}
                                 </nuxt-link>
@@ -69,5 +69,13 @@ onMounted(() => {
 .list-group-item a {
     text-decoration: none;
     color: var(--vt-c-black-soft);
+}
+
+
+.list-group-item .router-link-active,
+.list-group-item .router-link-exact-active {
+    font-weight: bolder;
+    color: var(--theme-color);
+    /* border-bottom: 1px solid var(--theme-color) !important; */
 }
 </style>
