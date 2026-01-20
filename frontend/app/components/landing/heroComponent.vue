@@ -37,7 +37,7 @@
 const carouselConfig = {
     itemsToShow: 1,
     wrapAround: true,
-    autoplay: 5000,
+    autoplay: 6000,
     transition: 1500,
 }
 

@@ -108,5 +108,8 @@ export default defineNuxtConfig({
 - npm install vue-select@beta
 - npx nuxt module add image
 - npm i --save-dev @types/node
+- npm install vue-typewriter-effect
+
+
 
 */

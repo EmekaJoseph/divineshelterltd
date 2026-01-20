@@ -15,6 +15,10 @@
             <landing-our-services />
         </section>
 
+        <section class="bg-light-subtle">
+            <landing-faqs-component />
+        </section>
+
 
     </nuxt-layout>
 </template>
