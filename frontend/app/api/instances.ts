@@ -16,12 +16,12 @@ const getLoadingIndicator = () => {
 };
 
 // const hostURL = import.meta.env.VITE_API_URL;
-const hostURL = 'http://localhost:8888';
+// const hostURL = 'http://localhost:8888';
+const hostURL = 'https://api.divineshelterltd.com';
 const apiURL = `${hostURL}/api/`;
 
 const getHeaders = (type: 'json' | 'form') => ({
     Accept: 'application/json',
-    withCredentials: true,
     'Content-Type': type === 'json' ? 'application/json' : 'multipart/form-data',
 });
 
@@ -29,6 +29,7 @@ const createAxiosInstance = (type: 'json' | 'form') =>
     axios.create({
         baseURL: apiURL,
         headers: getHeaders(type),
+        withCredentials: true,
     });
 
 const $instance = createAxiosInstance('json');

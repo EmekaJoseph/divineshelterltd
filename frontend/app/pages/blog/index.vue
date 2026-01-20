@@ -59,7 +59,7 @@ const blogs = computed(() => {
         date: new Date(Date.now() - i * 86400000 * 3).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }),
         author: 'Admin',
         category: ['Construction', 'Real Estate', 'Tips', 'News'][i % 4],
-        image: `/images/service-${(i % 5)}.webp`
+        image: `/images/service-${(i % 4)}.webp`
     }))
 })
 </script>

@@ -53,11 +53,12 @@ export default defineNuxtConfig({
     }
   },
 
-  nitro: {
-    prerender: {
-      crawlLinks: false,
-    }
-  },
+  // nitro: {
+  //   prerender: {
+  //     crawlLinks: false,
+  //   }
+  // },
+  nitro: { preset: 'static' },
 
   app: {
     buildAssetsDir: '/_assets/',
