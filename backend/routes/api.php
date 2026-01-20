@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\CompanyController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\BlogController;
 use App\Http\Controllers\Api\QuoteController;
+use App\Http\Controllers\Api\ProjectController;
 
 // Auth routes (public)
 Route::post('/login', [AuthController::class, 'login']);
@@ -36,9 +37,15 @@ Route::middleware('auth:sanctum')->group(function () {
     // Quote routes (protected - admin only)
     Route::get('/quotes', [QuoteController::class, 'index']);
     Route::get('/quotes/{id}', [QuoteController::class, 'show']);
-    Route::delete('/quotes/{id}', [QuoteController::class, 'destroy']);
+    // Project routes (protected)
+    Route::post('/projects', [ProjectController::class, 'store']);
+    Route::post('/projects/{id}', [ProjectController::class, 'update']);
+    Route::delete('/projects/{id}', [ProjectController::class, 'destroy']);
 });
 
 // Blog routes (public)
 Route::get('/blogs', [BlogController::class, 'index']);
 Route::get('/blogs/{id}', [BlogController::class, 'show']);
+// Project routes (public)
+Route::get('/projects', [ProjectController::class, 'index']);
+Route::get('/projects/{id}', [ProjectController::class, 'show']);

@@ -3,6 +3,7 @@ import visitor from "./end_points/visitor";
 import company from "./end_points/company";
 import blog from "./end_points/blog";
 import quote from "./end_points/quote";
+import projects from "./end_points/projects";
 
 export default {
     ...auth,
@@ -10,4 +11,5 @@ export default {
     ...company,
     ...blog,
     ...quote,
+    ...projects,
 }
