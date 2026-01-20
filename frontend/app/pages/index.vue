@@ -19,7 +19,7 @@
             <landing-latest-projects />
         </section>
 
-        <section class="bg-light-subtle">
+        <section>
             <landing-faqs-component />
         </section>
 

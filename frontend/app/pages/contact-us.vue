@@ -9,7 +9,7 @@
 
         <div class="container">
             <section class=" mt-3">
-                <div class="card">
+                <div class="card bg-light">
                     <div class="mapouter">
                         <div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no"
                                 marginheight="0" marginwidth="0"
