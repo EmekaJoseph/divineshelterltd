@@ -30,10 +30,28 @@ class VisitorController extends Controller
         $agent = new Agent();
         $agent->setUserAgent($request->userAgent());
 
+        $ipAddress = $request->ip();
+        $userAgent = $request->userAgent();
+        $pageUrl = $validated['page_url'] ?? null;
+
+        // Check for duplicate visitor within the last 30 minutes
+        $existingVisitor = Visitor::where('ip_address', $ipAddress)
+            ->where('user_agent', $userAgent)
+            ->where('page_url', $pageUrl)
+            ->where('created_at', '>=', now()->subMinutes(30))
+            ->first();
+
+        if ($existingVisitor) {
+            return response()->json([
+                'message' => 'Visitor already recorded recently',
+                'visitor' => $existingVisitor
+            ], 200);
+        }
+
         $visitor = Visitor::create([
-            'ip_address' => $request->ip(),
-            'user_agent' => $request->userAgent(),
-            'page_url' => $validated['page_url'] ?? null,
+            'ip_address' => $ipAddress,
+            'user_agent' => $userAgent,
+            'page_url' => $pageUrl,
             'referrer' => $validated['referrer'] ?? null,
             'device_type' => $agent->deviceType(),
             'browser' => $agent->browser(),
