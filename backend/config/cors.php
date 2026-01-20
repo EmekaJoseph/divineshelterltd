@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [env('FRONTEND_URL', 'http://localhost:3000'), 'https://divineshelterltd.com', 'https://www.divineshelterltd.com'],
+     'allowed_origins' => ['*'], // Restrict this in production
 
     'allowed_origins_patterns' => [],
 
