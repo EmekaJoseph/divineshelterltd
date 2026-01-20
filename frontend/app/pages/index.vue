@@ -16,6 +16,10 @@
         </section>
 
         <section class="bg-light-subtle">
+            <landing-latest-projects />
+        </section>
+
+        <section class="bg-light-subtle">
             <landing-faqs-component />
         </section>
 
