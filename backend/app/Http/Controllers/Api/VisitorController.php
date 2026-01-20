@@ -37,7 +37,7 @@ class VisitorController extends Controller
         // Check for duplicate visitor within the last 30 minutes
         $existingVisitor = Visitor::where('ip_address', $ipAddress)
             ->where('user_agent', $userAgent)
-            ->where('page_url', $pageUrl)
+            // ->where('page_url', $pageUrl)
             ->where('created_at', '>=', now()->subMinutes(30))
             ->first();
 

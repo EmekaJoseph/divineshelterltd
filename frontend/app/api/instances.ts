@@ -1,14 +1,18 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import { useLoadingIndicator } from '#app/composables/loading-indicator';
 
-// const { progress, isLoading, start, finish, clear } = useLoadingIndicator({
-//     duration: 2000,
-//     throttle: 200,
-//     // This is how progress is calculated by default
-//     estimatedProgress: (duration, elapsed) => (2 / Math.PI * 100) * Math.atan(elapsed / duration * 100 / 50),
-// })
+// Track active requests
+let activeRequests = 0;
+let loadingIndicator: ReturnType<typeof useLoadingIndicator> | null = null;
 
-
+// Initialize loading indicator (will be called from client-side only)
+const getLoadingIndicator = () => {
+    if (process.client && !loadingIndicator) {
+        loadingIndicator = useLoadingIndicator();
+    }
+    return loadingIndicator;
+};
 
 // const hostURL = import.meta.env.VITE_API_URL;
 const hostURL = 'http://localhost:8888';
@@ -34,22 +38,39 @@ const setAuthAndStartProgress = (config: any) => {
     if (process.client) {
         const token = Cookies.get('wigrcMorgnas#Tkn');
         if (token) config.headers.Authorization = `Bearer ${token}`;
+
+        // Start progress bar
+        activeRequests++;
+        if (activeRequests === 1) {
+            const indicator = getLoadingIndicator();
+            indicator?.start();
+        }
     }
 
-    // start({ force: true })
-    // progresses.push(useProgress().start());
     return config;
 };
 
 const finishProgress = (response: any) => {
-    // progresses.pop()?.finish();
-    // finish()
+    if (process.client) {
+        activeRequests--;
+        if (activeRequests <= 0) {
+            activeRequests = 0;
+            const indicator = getLoadingIndicator();
+            indicator?.finish();
+        }
+    }
     return response;
 };
 
 const handleError = (error: any) => {
-    // progresses.pop()?.finish();
-    // finish()
+    if (process.client) {
+        activeRequests--;
+        if (activeRequests <= 0) {
+            activeRequests = 0;
+            const indicator = getLoadingIndicator();
+            indicator?.finish();
+        }
+    }
     return Promise.reject(error);
 };
 
