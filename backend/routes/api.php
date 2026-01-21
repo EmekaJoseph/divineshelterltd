@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\BlogController;
 use App\Http\Controllers\Api\QuoteController;
 use App\Http\Controllers\Api\ProjectController;
+use App\Http\Controllers\Api\BuildingMaterialController;
 
 // Auth routes (public)
 Route::post('/login', [AuthController::class, 'login']);
@@ -41,6 +42,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/projects', [ProjectController::class, 'store']);
     Route::post('/projects/{id}', [ProjectController::class, 'update']);
     Route::delete('/projects/{id}', [ProjectController::class, 'destroy']);
+
+    // Building Material routes (protected)
+    Route::post('/building-materials', [BuildingMaterialController::class, 'store']);
+    Route::post('/building-materials/{id}', [BuildingMaterialController::class, 'update']);
+    Route::delete('/building-materials/{id}', [BuildingMaterialController::class, 'destroy']);
 });
 
 // Blog routes (public)
@@ -49,3 +55,6 @@ Route::get('/blogs/{id}', [BlogController::class, 'show']);
 // Project routes (public)
 Route::get('/projects', [ProjectController::class, 'index']);
 Route::get('/projects/{id}', [ProjectController::class, 'show']);
+// Building Material routes (public)
+Route::get('/building-materials', [BuildingMaterialController::class, 'index']);
+Route::get('/building-materials/{id}', [BuildingMaterialController::class, 'show']);

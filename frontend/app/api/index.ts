@@ -4,6 +4,7 @@ import company from "./end_points/company";
 import blog from "./end_points/blog";
 import quote from "./end_points/quote";
 import projects from "./end_points/projects";
+import buildingMaterials from "./end_points/building_materials";
 
 export default {
     ...auth,
@@ -12,4 +13,5 @@ export default {
     ...blog,
     ...quote,
     ...projects,
+    ...buildingMaterials,
 }

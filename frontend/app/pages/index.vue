@@ -20,6 +20,10 @@
         </section>
 
         <section>
+            <landing-building-materials />
+        </section>
+
+        <section>
             <landing-faqs-component />
         </section>
 

@@ -18,76 +18,22 @@
                     </p>
                 </section>
 
-                <section class="col-lg-6">
-                    <div class="h-100">
-                        <strong>Doors and Windows</strong>
-                        <p>
-                            We provide a premium selection of doors and windows designed for security and elegance.
-                            Our inventory includes high-security steel doors for main entrances, stylish internal panel
-                            doors, and durable aluminum and uPVC windows that offer excellent insulation and noise
-                            reduction.
-                        </p>
+                <div v-for="(materials, category) in groupedMaterials" :key="category" class="col-12 mt-5">
+                    <h2 class="text-theme border-bottom pb-2 mb-4">{{ category }}</h2>
+                    <div class="row g-4">
+                        <div v-for="material in materials" :key="material.id" class="col-md-6 col-lg-4"
+                            data-aos="fade-up">
+                            <div class="card shadow-sm h-100 hover-tiltY">
+                                <NuxtImg format="webp" loading="lazy" class="card-img-top object-fit-cover"
+                                    style="height: 200px;" :src="material.image" :alt="material.name" />
+                                <div class="card-body">
+                                    <h5 class="fw-bold text-theme">{{ material.name }}</h5>
+                                    <p class="text-muted small mb-0">{{ material.description }}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </section>
-
-                <section class="col-lg-6">
-                    <div class="h-100">
-                        <strong>Hydraform Bricks</strong>
-                        <p>
-                            As pioneers in alternative building technology, we supply high-quality Compressed Stabilized
-                            Earth Bricks (CSEB). These interlocking bricks reduce cement usage, eliminate the need for
-                            mortar in vertical joints, and provide superior thermal comfort compared to conventional
-                            blocks.
-                        </p>
-                    </div>
-                </section>
-
-                <section class="col-lg-6">
-                    <div class="h-100">
-                        <strong>PVC Ceilings</strong>
-                        <p>
-                            Our PVC ceiling panels are the perfect solution for modern interiors. They are
-                            water-resistant,
-                            termite-proof, and easy to install. Available in various designs and finishes, they offer
-                            a long-lasting, maintenance-free alternative to traditional ceiling boards.
-                        </p>
-                    </div>
-                </section>
-
-                <section class="col-lg-6">
-                    <div class="h-100">
-                        <strong>Tiles</strong>
-                        <p>
-                            Transform your floors and walls with our exquisite range of tiles. We stock ceramic,
-                            porcelain,
-                            and vitrified tiles in diverse sizes and patterns. Whether for high-traffic commercial areas
-                            or luxurious residential bathrooms, our tiles deliver durability and style.
-                        </p>
-                    </div>
-                </section>
-
-                <section class="col-lg-6">
-                    <div class="h-100">
-                        <strong>Roofing Materials</strong>
-                        <p>
-                            Protect your investment with our superior roofing solutions. We supply long-span aluminum
-                            roofing sheets, stone-coated metal tiles, and essential accessories. Our materials are
-                            rust-resistant and designed to withstand harsh weather conditions.
-                        </p>
-                    </div>
-                </section>
-
-                <section class="col-lg-6">
-                    <div class="h-100">
-                        <strong>Finishing Materials</strong>
-                        <p>
-                            The final touches make the difference. We offer a comprehensive range of finishing
-                            materials,
-                            including premium quality paints, screeding bonds, POP cement, as well as electrical and
-                            plumbing fittings to ensure your building is functional and beautiful.
-                        </p>
-                    </div>
-                </section>
+                </div>
 
                 <section class="col-lg-4 mt-5">
                     <nuxt-link to="/request-a-quote" class="btn btn-theme w-100 btn-lg">
@@ -100,4 +46,12 @@
     </nuxt-layout>
 </template>
 
-<style scoped></style>
+<script lang="ts" setup>
+const { groupedMaterials } = useBuildingMaterials()
+</script>
+
+<style scoped>
+.object-fit-cover {
+    object-fit: cover;
+}
+</style>
