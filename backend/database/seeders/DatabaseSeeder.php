@@ -23,6 +23,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Seed company data
-        $this->call(CompanySeeder::class);
+        $this->call([
+            CompanySeeder::class,
+            BuildingMaterialCategorySeeder::class,
+        ]);
     }
 }

@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('building_materials', function (Blueprint $table) {
+        Schema::create('building_material_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description')->nullable();
-            $table->foreignId('category_id')->constrained('building_material_categories')->onDelete('cascade');
-            $table->string('image')->nullable();
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('building_materials');
+        Schema::dropIfExists('building_material_categories');
     }
 };

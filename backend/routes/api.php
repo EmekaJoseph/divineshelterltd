@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\BlogController;
 use App\Http\Controllers\Api\QuoteController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\BuildingMaterialController;
+use App\Http\Controllers\Api\BuildingMaterialCategoryController;
 
 // Auth routes (public)
 Route::post('/login', [AuthController::class, 'login']);
@@ -47,6 +48,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/building-materials', [BuildingMaterialController::class, 'store']);
     Route::post('/building-materials/{id}', [BuildingMaterialController::class, 'update']);
     Route::delete('/building-materials/{id}', [BuildingMaterialController::class, 'destroy']);
+
+    // Building Material Category routes (protected)
+    Route::apiResource('building-material-categories', BuildingMaterialCategoryController::class)->except(['index', 'show']);
 });
 
 // Blog routes (public)
@@ -58,3 +62,7 @@ Route::get('/projects/{id}', [ProjectController::class, 'show']);
 // Building Material routes (public)
 Route::get('/building-materials', [BuildingMaterialController::class, 'index']);
 Route::get('/building-materials/{id}', [BuildingMaterialController::class, 'show']);
+
+// Building Material Category routes (public)
+Route::get('/building-material-categories', [BuildingMaterialCategoryController::class, 'index']);
+Route::get('/building-material-categories/{id}', [BuildingMaterialCategoryController::class, 'show']);
