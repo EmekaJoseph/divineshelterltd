@@ -14,7 +14,15 @@ class BuildingMaterialController extends Controller
      */
     public function index()
     {
-        return response()->json(BuildingMaterial::latest()->get());
+        $materials = BuildingMaterial::with('category')->latest()->get()->map(function ($material) {
+            $material->category_name = $material->category ? $material->category->name : null;
+            $data = $material->toArray();
+            $data['category'] = $data['category_name'];
+            unset($data['category_name']);
+            return $data;
+        });
+
+        return response()->json($materials);
     }
 
     /**
@@ -25,7 +33,7 @@ class BuildingMaterialController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',
-            'category' => 'required|string|max:255',
+            'category_id' => 'required|uuid|exists:building_material_categories,id',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
@@ -46,7 +54,11 @@ class BuildingMaterialController extends Controller
      */
     public function show(string $id)
     {
-        return response()->json(BuildingMaterial::findOrFail($id));
+        $material = BuildingMaterial::with('category')->findOrFail($id);
+        $data = $material->toArray();
+        $data['category'] = $material->category ? $material->category->name : null;
+        
+        return response()->json($data);
     }
 
     /**
@@ -59,7 +71,7 @@ class BuildingMaterialController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',
-            'category' => 'required|string|max:255',
+            'category_id' => 'required|uuid|exists:building_material_categories,id',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
