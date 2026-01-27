@@ -7,6 +7,44 @@
 
         <div class="container mt-5">
             <div class="row g-3 justify-content-center">
+
+
+                <section class="col-lg-12">
+                    <p>
+                        <span class=" bg-warning-subtle text-theme px-1 text-nowrap">
+                            Divine Shelter Construction Services Ltd
+                        </span>
+                        is a Nigerian construction company focused on
+                        delivering durable, practical, and cost-efficient building solutions. Our work combines
+                        sound construction practice with alternative building technology suited to the Nigerian
+                        environment.
+                    </p>
+
+                    <p>
+                        We specialize in building construction, Hydraform interlocking brick systems, and the supply of
+                        quality building materials. Over the years, we have executed residential, commercial, and public
+                        or institutional projects, including the production and installation of Hydraform bricks at the
+                        Kugbo International Market in Abuja, university hostel projects, event centres, hotels, and
+                        private residential developments across several states.
+                    </p>
+
+                    <p>
+                        Beyond construction, we operate a dedicated doors and building materials supply arm, supported
+                        by a physical warehouse and retail outlet in Epe, Lagos State. This allows clients to inspect
+                        products directly, select suitable designs, and receive professional guidance before purchase.
+                    </p>
+
+                    <p>
+                        Our approach is straightforward: proper planning, quality materials, skilled supervision, and
+                        structures that stand the test of time.
+                    </p>
+                </section>
+
+
+
+
+
+
                 <section class="col-lg-12">
                     <strong>Brief History</strong>
                     <p>
@@ -31,6 +69,18 @@
                         Hydraform brick production and construction, building materials supply, and real estate
                         development, serving private clients, corporate bodies, and public institutions.
                     </p>
+                </section>
+
+                <section class="col-lg-12">
+                    <strong>WHY CHOOSE US</strong>
+                    <ul>
+                        <li>Proven experience in Hydraform construction</li>
+                        <li>Cost-efficient and durable building solutions</li>
+                        <li>Reliable supply of quality doors for residential and hotel buildings</li>
+                        <li>Strong understanding of local building conditions</li>
+                        <li>Reliable supervision and timely delivery</li>
+                        <li>Commitment to quality and client satisfaction</li>
+                    </ul>
                 </section>
 
 
@@ -74,11 +124,7 @@
                     </ul>
                 </section>
 
-                <section class="col-lg-4">
-                    <nuxt-link to="/request-a-quote" class="btn btn-theme w-100 btn-lg">
-                        Request a Quote
-                    </nuxt-link>
-                </section>
+
             </div>
         </div>
 

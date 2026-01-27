@@ -1,8 +1,10 @@
 <template>
-    <nav class="navbar navbar-expand-lg fixed-top p-3 bg-white" :class="customClass">
+    <nav class="navbar navbar-expand-lg fixed-top p-3 px-0 bg-white" :class="customClass">
         <div class="container">
-            <NuxtLink class="navbar-brand" to="/">
-                <NuxtImg src="/images/divine-shelter-logo.webp" width="80" alt="site_logo" />
+            <NuxtLink to="/" class="navbar-brand d-flex align-items-center text-theme"
+                :class="{ 'text-white': route.path == '/' && !headerDropped }">
+                <NuxtImg src="/images/divine-shelter-logo.webp" width="53" alt="site_logo" />
+                <span class="fw-medium ms-1 text-uppercase small ">Divine Shelter Limited</span>
             </NuxtLink>
             <button class="navbar-toggler border-0" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas"
                 aria-controls="menuOffcanvas" type="button">
@@ -58,7 +60,7 @@ const onAboutRoute = computed(() => {
 })
 
 const customClass = computed(() => ({
-    'bg-transparent text-white': !headerDropped.value && route.path == '/',
+    'bg-dark-faded text-white': !headerDropped.value && route.path == '/',
     'animate__animated animate__slideInDown animate__faster': headerDropped.value && route.path == '/',
     // 'shadow-sm': headerDropped.value || route.path !== '/'
     'shadow-sm': headerDropped.value
@@ -114,5 +116,9 @@ onMounted(() => {
 .dropdown-item:hover {
     color: var(--theme-color);
     background: transparent;
+}
+
+.bg-dark-faded {
+    background-color: rgba(0, 0, 0, 0.5) !important;
 }
 </style>

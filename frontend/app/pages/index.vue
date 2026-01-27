@@ -7,19 +7,23 @@
             <landing-about-us />
         </section>
 
-        <section class="bg-light-subtle">
+        <section class="bg-light">
+            <landing-why-choose-us />
+        </section>
+
+        <section>
             <landing-aims-and-objectives />
         </section>
 
-        <section>
+        <section class="bg-light">
             <landing-our-services />
         </section>
 
-        <section class="bg-light-subtle">
+        <section>
             <landing-latest-projects />
         </section>
 
-        <section>
+        <section class="bg-light">
             <landing-building-materials />
         </section>
 

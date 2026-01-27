@@ -53,11 +53,7 @@
                     </ul>
                 </section>
 
-                <section class="col-lg-4">
-                    <nuxt-link to="/request-a-quote" class="btn btn-theme w-100 btn-lg">
-                        Request a Quote
-                    </nuxt-link>
-                </section>
+
             </div>
         </div>
 

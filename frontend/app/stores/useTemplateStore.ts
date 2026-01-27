@@ -38,11 +38,11 @@ export const useTemplateStore = defineStore('template', () => {
       routePath: '/',
       hasDropDown: true,
       dropdownItems: [
-        { title: "Building Construction", routePath: '/services/building-construction' },
-        { title: "Real Estate and Property Sales", routePath: '/services/real-estates' },
-        { title: "Project Management", routePath: '/services/project-management' },
-        { title: "Training", routePath: '/services/training' },
-        { title: "Hydraform / Alternative Building Systems", routePath: '/services/hydraform-alternative-building-systems' },
+        { title: "Building Construction", routePath: '/services/building-construction', image: '/images/service-building-construction.webp' },
+        { title: "Real Estate and Property Sales", routePath: '/services/real-estates', image: '/images/service-real-estates.webp' },
+        { title: "Project Management", routePath: '/services/project-management', image: '/images/service-project-management.webp' },
+        { title: "Training", routePath: '/services/training', image: '/images/service-training.webp' },
+        { title: "Hydraform / Alternative Building Systems", routePath: '/services/hydraform-alternative-building-systems', image: '/images/service-hydraform-alternative-building-systems.webp' },
       ],
       relatedRoutes: [
         '/about',
@@ -63,10 +63,10 @@ export const useTemplateStore = defineStore('template', () => {
       title: 'Request a Quote',
       routePath: '/request-a-quote',
     },
-    {
-      title: 'Blog',
-      routePath: '/blog'
-    },
+    // {
+    //   title: 'Blog',
+    //   routePath: '/blog'
+    // },
     {
       title: 'Contact Us',
       routePath: '/contact-us'

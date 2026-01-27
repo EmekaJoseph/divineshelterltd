@@ -2,6 +2,7 @@
     <landing-navbar-component />
     <div class="min-vh-100 pb-5 overflow-hidden">
         <slot />
+        <landing-cta-component />
     </div>
     <landing-footer-component />
 

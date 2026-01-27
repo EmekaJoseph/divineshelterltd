@@ -4,7 +4,7 @@
             <Slide v-for="({ header, info, image }, index) in slideItems" :key="index">
                 <div :style="{ background: `url(${image}) center/cover no-repeat` }" class="w-100 hero min-vh-100">
 
-                    <div class="bg-overlay"></div>
+                    <!-- <div class="bg-overlay"></div> -->
                     <div class="container">
                         <div class="col-md-4">
                             <div class="card border-0 animate__animated">
@@ -13,9 +13,13 @@
                                 </div>
 
                                 <div class="card-footer bg-transparent border-0">
-                                    <nuxt-link to="/about-us" class="btn btn-theme">
-                                        Read More <i class="bi bi-arrow-right"></i>
+                                    <nuxt-link to="/request-a-quote" class="btn btn-theme">
+                                        Request A Quote <i class="bi bi-arrow-right"></i>
                                     </nuxt-link>
+
+                                    <!-- <nuxt-link to="/about-us" class="btn btn-theme">
+                                        Read More <i class="bi bi-arrow-right"></i>
+                                    </nuxt-link> -->
                                 </div>
                             </div>
                         </div>
@@ -111,7 +115,8 @@ const slideItems: { header: string, info: string, image: string }[] = [
     }
 
     .card {
-        background: transparent;
+        /* background: transparent; */
+        background: rgba(27, 9, 9, 0.406);
         color: #fff;
         text-align: center;
     }

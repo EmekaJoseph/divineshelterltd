@@ -1,101 +1,138 @@
 <template>
-    <div data-aos="fade-up" class="container">
-        <div class="row g-3 justify-content-lg-center align-items-center ">
-            <div class="text-center fs-5 fw-semibold text-muted text-between-lines">
-                Aims & Objectives 🎯 📝
-            </div>
-
-
-
-            <div class="row gy-5 mt-0 justify-content-center align-items-center">
-                <div class="col-md-4 text-center d-none d-md-block">
-                    <NuxtImg src="/images/aim.jpg" width="150" />
-                </div>
-                <div class="col-md-8">
-                    <strong> Our Aim </strong>
-                    <div>
-                        Our aim is to provide high-quality construction, building materials, and real estate solutions
-                        that
-                        deliver long-term value, structural reliability, and cost efficiency for our clients. We seek to
-                        become a trusted partner in the development of...
-                        <nuxt-link class="text-theme fw-bold" to="/about-us">read more</nuxt-link>
-                        <!-- residential, commercial, and public
-                        infrastructure by combining technical expertise, modern building systems, and disciplined
-                        project execution. -->
+    <div class="container py-5" data-aos="fade-up">
+        <div class="row g-5 align-items-center">
+            <!-- Left Side: Vision/Aim Card -->
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="vision-card p-5 h-100 position-relative">
+                    <div class="vision-icon-overlay">
+                        <i class="bi bi-bullseye"></i>
+                    </div>
+                    <div class="content-wrapper position-relative">
+                        <h3 class="fw-bold mb-4 display-6">Our Vision & Aim</h3>
+                        <p class="lead text-muted mb-4">
+                            To provide high-quality construction, building materials, and real estate solutions
+                            that deliver long-term value, structural reliability, and cost efficiency for our clients.
+                        </p>
+                        <p class="text-secondary">
+                            We seek to become a trusted partner in the development of residential, commercial, and
+                            public
+                            infrastructure by combining technical expertise and modern building systems.
+                        </p>
+                        <nuxt-link to="/about-us" class="btn btn-outline-theme mt-3 px-4 rounded-pill">
+                            Discover More <i class="bi bi-arrow-right ms-2"></i>
+                        </nuxt-link>
                     </div>
                 </div>
-
-
-
-                <div class="col-md-7">
-                    <strong> Our Objectives </strong>
-                    <div>
-                        <ul>
-                            <!-- <li>
-                                To design and construct durable residential, commercial and institutional buildings
-                                that meet approved standards and client requirements.
-                            </li>
-                            <li>
-                                To promote Hydraform Bricks and alternative building systems as cost-effective and
-                                environmentally responsible construction solutions.
-                            </li>
-                            <li>
-                                To supply quality building materials that meet site and structural performance
-                                standards.
-                            </li>
-                            <li>
-                                To develop and sell land and housing projects with proper documentation and transparent
-                                processes.
-                            </li> -->
-                            <li>
-                                To deliver projects through sound planning, supervision, and quality control from
-                                foundation to handover.
-                            </li>
-                            <li>
-                                To contribute to sustainable housing and infrastructure development across Nigeria.
-                            </li>
-                            <nuxt-link class="text-theme fw-bold" to="/about-us">read more</nuxt-link>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-5 text-center d-none d-md-block">
-                    <NuxtImg src="/images/objectives.jpg" width="150" />
-                </div>
-
             </div>
 
+            <!-- Right Side: Objectives List -->
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="objectives-section ps-lg-4">
+                    <h3 class="fw-bold mb-5">Strategic Objectives</h3>
+
+                    <div class="objective-item d-flex mb-4">
+                        <div class="obj-icon me-4">
+                            <i class="bi bi-check-circle-fill text-warning"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1">Quality Control</h5>
+                            <p class="text-muted small mb-0">Delivering projects through sound planning, supervision,
+                                and quality control from foundation to handover.</p>
+                        </div>
+                    </div>
+
+                    <div class="objective-item d-flex mb-4">
+                        <div class="obj-icon me-4">
+                            <i class="bi bi-check-circle-fill text-warning"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1">Sustainable Growth</h5>
+                            <p class="text-muted small mb-0">Contributing to sustainable housing and infrastructure
+                                development across Nigeria with eco-friendly solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="objective-item d-flex mb-4">
+                        <div class="obj-icon me-4">
+                            <i class="bi bi-check-circle-fill text-warning"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1">Interlocking Brick Systems</h5>
+                            <p class="text-muted small mb-0">Promoting Hydraform Bricks as cost-effective and
+                                environmentally responsible construction solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="objective-item d-flex">
+                        <div class="obj-icon me-4">
+                            <i class="bi bi-check-circle-fill text-warning"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1">Diverse Construction</h5>
+                            <p class="text-muted small mb-0">Designing and constructing durable residential, commercial
+                                and institutional buildings that meet global standards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
-
-const templateStore = useTemplateStore()
-
-const servicesList = computed(() => {
-    const services = templateStore.navBarMenus.find((x) => x.title == 'Services')
-    const items = services?.dropdownItems ?? []
-    return items.map((x, index) => ({ title: x.title, route: x.routePath, image: '/images/hero1.webp' }))
-})
-
-
+// No extra logic needed for this structure currently
 </script>
 
-
 <style scoped>
-.info-text {
-    font-size: 25px;
-    font-weight: 600;
-    line-height: 1.3;
+.vision-card {
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
+.vision-icon-overlay {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 150px;
+    color: rgba(var(--bs-warning-rgb), 0.05);
+    transform: rotate(-15deg);
+    pointer-events: none;
+}
 
-@media (max-width: 767px) {
+.obj-icon i {
+    font-size: 1.5rem;
+}
 
-    .info-text {
-        font-size: 20px;
-    }
+.btn-outline-theme {
+    border-color: #20546f;
+    color: #20546f;
+    transition: all 0.3s;
+}
 
+.btn-outline-theme:hover {
+    background: #20546f;
+    color: #fff;
+    transform: translateX(5px);
+}
 
+.objective-item {
+    padding: 15px;
+    border-radius: 12px;
+    transition: background 0.3s;
+}
+
+.objective-item:hover {
+    background: rgba(var(--bs-warning-rgb), 0.05);
+}
+
+.display-6 {
+    color: #20546f;
+}
+
+.text-theme {
+    color: #20546f;
 }
 </style>
