@@ -1,34 +1,26 @@
 <template>
     <nuxt-layout name="landing-layout">
-        <landing-page-title-image image="/images/service-2.webp">
-            Hydraform & Alternative Systems
+        <landing-page-title-image>
+            Hydraform Technology
         </landing-page-title-image>
 
         <div class="container mt-5">
             <div class="row g-3 justify-content-center">
                 <section class="col-lg-12">
-                    <strong>Innovation in Construction</strong>
+                    <strong>Hydraform Technology</strong>
                     <p>
-                        <span class="bg-warning-subtle text-theme px-1 text-nowrap">
-                            Divine Shelter Construction Services Ltd.
-                        </span>
-                        is a leader in the adoption of Hydraform Compressed Stabilized Earth Bricks (CSEB) and other
-                        alternative building technologies in Nigeria. We leverage these modern systems to provide
-                        cost-effective, eco-friendly, and durable housing solutions without compromising on quality or
-                        aesthetics.
+                        Hydraform interlocking brick technology is a modern building solution that reduces construction
+                        cost while improving strength and durability. The system requires less cement, speeds up
+                        construction, and produces strong walls suitable for Nigerian conditions.
                     </p>
                 </section>
 
                 <section class="col-lg-12">
-                    <strong>Why Choose Hydraform?</strong>
+                    <strong>Why trust us with Hydraform?</strong>
                     <p>
-                        Hydraform interlocking blocks offer significant advantages over conventional masonry. They
-                        reduce
-                        construction costs by up to 30% by eliminating the need for mortar in vertical joints and
-                        minimizing
-                        plastering requirements. Additionally, the thermal properties of earth bricks ensure that
-                        buildings
-                        remain cooler in hot climates, enhancing comfort and energy efficiency.
+                        At Divine Shelter Construction Services Ltd, we have practical, hands-on experience producing
+                        and using Hydraform bricks on real projects. Our focus is correct production, proper curing,
+                        professional installation, and quality finishing.
                     </p>
                 </section>
 

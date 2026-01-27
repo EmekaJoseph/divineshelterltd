@@ -1,6 +1,6 @@
 <template>
     <nuxt-layout name="landing-layout">
-        <landing-page-title-image image="/images/service-4.webp">
+        <landing-page-title-image>
             Building Materials
         </landing-page-title-image>
 
@@ -9,12 +9,16 @@
 
                 <section class="col-lg-12">
                     <p class="lead">
-                        <span class="bg-warning-subtle text-theme px-1 text-nowrap">
+
+                        Supply and installation of security doors, wooden and panel doors, and hotel doors for
+                        residential, commercial, hotel, and institutional buildings.
+
+                        <!-- <span class="bg-warning-subtle text-theme px-1 text-nowrap">
                             Divine Shelter Construction Services Ltd.
                         </span>
                         is your reliable source for top-tier building materials. We supply genuine, high-quality
                         products
-                        essential for the structural integrity and aesthetic finish of your projects.
+                        essential for the structural integrity and aesthetic finish of your projects. -->
                     </p>
                 </section>
 
@@ -35,11 +39,7 @@
                     </div>
                 </div>
 
-                <section class="col-lg-4 mt-5">
-                    <nuxt-link to="/request-a-quote" class="btn btn-theme w-100 btn-lg">
-                        Request a Supply Quote
-                    </nuxt-link>
-                </section>
+
             </div>
         </div>
 

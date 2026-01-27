@@ -2,7 +2,7 @@
     <nuxt-layout name="landing-layout">
 
         <div class="">
-            <landing-page-title-image image="/images/service-0.webp">
+            <landing-page-title-image>
                 Contact Us
             </landing-page-title-image>
         </div>

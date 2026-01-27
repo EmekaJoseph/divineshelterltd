@@ -16,8 +16,8 @@ const getLoadingIndicator = () => {
 };
 
 // const hostURL = import.meta.env.VITE_API_URL;
-const hostURL = 'http://localhost:8888';
-// const hostURL = 'https://api.divineshelterltd.com';
+// const hostURL = 'http://localhost:8888';
+const hostURL = 'https://api.divineshelterltd.com';
 const apiURL = `${hostURL}/api/`;
 
 const getHeaders = (type: 'json' | 'form') => ({

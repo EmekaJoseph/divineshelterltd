@@ -1,6 +1,6 @@
 <template>
     <nuxt-layout name="landing-layout">
-        <landing-page-title-image image="/images/service-5.webp">
+        <landing-page-title-image>
             Training & Consultancy
         </landing-page-title-image>
 

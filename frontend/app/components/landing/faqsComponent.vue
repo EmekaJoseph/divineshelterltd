@@ -47,20 +47,27 @@
                 </div>
             </div>
 
-            <!-- Still Have Questions ? -->
-            <div class="support-card mt-5 p-5 rounded-4 text-center shadow-lg" data-aos="zoom-in">
-                <div class="icon-circle mb-3 mx-auto">
-                    <i class="bi bi-chat-dots-fill text-white fs-2"></i>
+            <!-- Still Have Questions ? (Refined version to not compete with global CTA) -->
+            <div class="faq-support-box mt-5 p-4 rounded-4 text-center border overflow-hidden position-relative"
+                data-aos="fade-up">
+                <div class="row align-items-center justify-content-center g-3">
+                    <div class="col-auto">
+                        <div class="icon-square shadow-sm">
+                            <i class="bi bi-question-circle font-bold text-theme fs-3"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-lg-start">
+                        <h4 class="fw-bold text-dark mb-1">Still have questions?</h4>
+                        <p class="text-muted mb-0">Can’t find the answer you’re looking for? Our team is a message away.
+                        </p>
+                    </div>
+                    <div class="col-lg-auto">
+                        <nuxt-link to="/contact-us"
+                            class="btn btn-outline-theme px-4 py-2 rounded-pill fw-bold transition-all">
+                            Send us a Message
+                        </nuxt-link>
+                    </div>
                 </div>
-                <h3 class="fw-bold text-white mb-2">Still have questions?</h3>
-                <p class="text-light opacity-75 mb-4 max-w-500 mx-auto">
-                    Can’t find the answer you’re looking for? Our friendly team is ready to help you with any specific
-                    inquiries.
-                </p>
-                <nuxt-link to="/contact-us"
-                    class="btn btn-light text-theme fw-bold px-5 py-3 rounded-pill hover-up transition-all">
-                    GET IN TOUCH
-                </nuxt-link>
             </div>
         </div>
     </div>
@@ -240,26 +247,29 @@ const groupedFaqs = [
     background-position: center;
 }
 
-.support-card {
-    background: linear-gradient(135deg, #20546f 0%, #184157 100%);
+.faq-support-box {
+    background: #fdfdfd;
+    border-color: #eee !important;
 }
 
-.icon-circle {
-    width: 70px;
-    height: 70px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
+.icon-square {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.max-w-500 {
-    max-width: 500px;
+.btn-outline-theme {
+    border-color: #20546f;
+    color: #20546f;
 }
 
-.hover-up:hover {
-    transform: translateY(-5px);
+.btn-outline-theme:hover {
+    background: #20546f;
+    color: #fff;
 }
 
 .transition-all {

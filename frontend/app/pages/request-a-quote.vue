@@ -1,6 +1,6 @@
 <template>
     <nuxt-layout name="landing-layout">
-        <landing-page-title-image image="/images/quotation-image.jpg">
+        <landing-page-title-image>
             Request A Quote
         </landing-page-title-image>
 

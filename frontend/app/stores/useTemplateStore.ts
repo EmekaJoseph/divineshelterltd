@@ -42,7 +42,7 @@ export const useTemplateStore = defineStore('template', () => {
         { title: "Real Estate and Property Sales", routePath: '/services/real-estates', image: '/images/service-real-estates.webp' },
         { title: "Project Management", routePath: '/services/project-management', image: '/images/service-project-management.webp' },
         { title: "Training", routePath: '/services/training', image: '/images/service-training.webp' },
-        { title: "Hydraform / Alternative Building Systems", routePath: '/services/hydraform-alternative-building-systems', image: '/images/service-hydraform-alternative-building-systems.webp' },
+        { title: "Hydraform Technology", routePath: '/services/hydraform-alternative-building-systems', image: '/images/service-hydraform-alternative-building-systems.webp' },
       ],
       relatedRoutes: [
         '/about',

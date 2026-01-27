@@ -15,15 +15,15 @@
 
                     <div class="d-flex flex-wrap justify-content-center gap-3">
                         <nuxt-link to="/request-a-quote"
-                            class="btn btn-warning px-4 py-3 rounded-pill fw-bold hover-up transition-all">
+                            class="btn btn-warning py-3 rounded-pill fw-bold hover-up transition-all cta-btn">
                             Request a Quote
                         </nuxt-link>
                         <nuxt-link to="/contact-us"
-                            class="btn btn-outline-light px-4 py-3 rounded-pill fw-bold hover-up transition-all">
+                            class="btn btn-outline-light py-3 rounded-pill fw-bold hover-up transition-all cta-btn">
                             Contact Us
                         </nuxt-link>
                         <nuxt-link to="/contact-us"
-                            class="btn btn-light text-theme px-4 py-3 rounded-pill fw-bold hover-up transition-all">
+                            class="btn btn-light text-theme py-3 rounded-pill fw-bold hover-up transition-all cta-btn">
                             Visit Our Epe Warehouse
                         </nuxt-link>
                     </div>
@@ -70,13 +70,20 @@
     color: #20546f;
 }
 
+.cta-btn {
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .transition-all {
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .hover-up:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(32, 84, 111, 0.3);
 }
 
 .btn-warning {

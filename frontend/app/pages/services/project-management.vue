@@ -1,6 +1,6 @@
 <template>
     <nuxt-layout name="landing-layout">
-        <landing-page-title-image image="/images/service-3.webp">
+        <landing-page-title-image>
             Project Management
         </landing-page-title-image>
 
