@@ -3,14 +3,42 @@
     <div class="row g-4 mb-4">
       <!-- Stats Cards -->
       <div class="col-md-6 col-lg-3">
-        <NuxtLink to="/admin/blogs" class="text-decoration-none">
+        <NuxtLink to="/admin/visitors" class="text-decoration-none">
           <div class="stat-card">
-            <div class="stat-icon bg-gradient-primary">
-              <i class="bi bi-newspaper"></i>
+            <div class="stat-icon bg-gradient-success">
+              <i class="bi bi-people"></i>
             </div>
             <div class="stat-content">
-              <h6 class="stat-label">Blog Posts</h6>
-              <h3 class="stat-value">--</h3>
+              <h6 class="stat-label">Total Visitors</h6>
+              <h3 class="stat-value">{{ stats.visitors }}</h3>
+            </div>
+          </div>
+        </NuxtLink>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <NuxtLink to="/admin/projects" class="text-decoration-none">
+          <div class="stat-card">
+            <div class="stat-icon bg-gradient-primary">
+              <i class="bi bi-briefcase"></i>
+            </div>
+            <div class="stat-content">
+              <h6 class="stat-label">Projects</h6>
+              <h3 class="stat-value">{{ stats.projects }}</h3>
+            </div>
+          </div>
+        </NuxtLink>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <NuxtLink to="/admin/materials" class="text-decoration-none">
+          <div class="stat-card">
+            <div class="stat-icon bg-gradient-info">
+              <i class="bi bi-bricks"></i>
+            </div>
+            <div class="stat-content">
+              <h6 class="stat-label">Materials</h6>
+              <h3 class="stat-value">{{ stats.materials }}</h3>
             </div>
           </div>
         </NuxtLink>
@@ -23,36 +51,8 @@
               <i class="bi bi-chat-quote"></i>
             </div>
             <div class="stat-content">
-              <h6 class="stat-label">Quote Requests</h6>
-              <h3 class="stat-value">--</h3>
-            </div>
-          </div>
-        </NuxtLink>
-      </div>
-
-      <div class="col-md-6 col-lg-3">
-        <NuxtLink to="/admin/visitors" class="text-decoration-none">
-          <div class="stat-card">
-            <div class="stat-icon bg-gradient-success">
-              <i class="bi bi-people"></i>
-            </div>
-            <div class="stat-content">
-              <h6 class="stat-label">Total Visitors</h6>
-              <h3 class="stat-value">--</h3>
-            </div>
-          </div>
-        </NuxtLink>
-      </div>
-
-      <div class="col-md-6 col-lg-3">
-        <NuxtLink to="/admin/company" class="text-decoration-none">
-          <div class="stat-card">
-            <div class="stat-icon bg-gradient-info">
-              <i class="bi bi-building"></i>
-            </div>
-            <div class="stat-content">
-              <h6 class="stat-label">Company Info</h6>
-              <h3 class="stat-value">Manage</h3>
+              <h6 class="stat-label">Quotes</h6>
+              <h3 class="stat-value">{{ stats.quotes }}</h3>
             </div>
           </div>
         </NuxtLink>
@@ -66,14 +66,17 @@
           <div class="card-body">
             <h5 class="card-title mb-4 fw-bold">Quick Actions</h5>
             <div class="d-flex flex-wrap gap-3">
-              <NuxtLink to="/admin/blogs" class="btn btn-primary">
-                <i class="bi bi-plus-circle me-2"></i> New Blog Post
+              <NuxtLink to="/admin/projects/manage" class="btn btn-primary">
+                <i class="bi bi-plus-circle me-2"></i> New Project
+              </NuxtLink>
+              <NuxtLink to="/admin/materials/manage" class="btn btn-info text-white">
+                <i class="bi bi-plus-circle me-2"></i> New Material
+              </NuxtLink>
+              <NuxtLink to="/admin/blogs" class="btn btn-outline-primary">
+                <i class="bi bi-newspaper me-2"></i> Blog Posts
               </NuxtLink>
               <NuxtLink to="/admin/quotes" class="btn btn-outline-warning">
                 <i class="bi bi-chat-quote me-2"></i> View Quotes
-              </NuxtLink>
-              <NuxtLink to="/admin/settings" class="btn btn-outline-secondary">
-                <i class="bi bi-gear me-2"></i> Settings
               </NuxtLink>
             </div>
           </div>
@@ -84,9 +87,40 @@
 </template>
 
 <script setup lang="ts">
+import api from '~/api';
+
 definePageMeta({
   layout: 'admin',
   middleware: 'auth'
+});
+
+const stats = ref({
+  visitors: '0',
+  projects: '0',
+  materials: '0',
+  quotes: '0'
+});
+
+const loadStats = async () => {
+  try {
+    const [vResp, pResp, mResp, qResp] = await Promise.all([
+      api.getVisitors(),
+      api.getProjects(),
+      api.getBuildingMaterials(),
+      api.getQuotes()
+    ]);
+
+    stats.value.visitors = vResp.data.total || vResp.data.data?.length || 0;
+    stats.value.projects = pResp.data.length || 0;
+    stats.value.materials = mResp.data.length || 0;
+    stats.value.quotes = qResp.data.quotes?.length || 0;
+  } catch (error) {
+    console.error('Failed to load dashboard stats:', error);
+  }
+}
+
+onMounted(() => {
+  loadStats();
 });
 </script>
 

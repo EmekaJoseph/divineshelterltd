@@ -29,7 +29,7 @@ Route::post('/quotes', [QuoteController::class, 'store']);
 // Company routes (protected with Sanctum)
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('company', [CompanyController::class, 'show']);
-    Route::put('company/{id}', [CompanyController::class, 'update']);
+    Route::put('company', [CompanyController::class, 'update']);
 
     // Blog routes (protected)
     Route::post('/blogs', [BlogController::class, 'store']);

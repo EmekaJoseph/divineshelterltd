@@ -1,37 +1,41 @@
+import api from "~/api"
+
 export const useBuildingMaterials = () => {
-    const materials = computed(() => {
-        const categories = [
-            'Doors and Windows',
-            'Hydraform Bricks',
-            'PVC Ceilings',
-            'Tiles',
-            'Roofing Materials',
-            'Finishing Materials'
-        ]
+    const materials = ref<any[]>([])
+    const categories = ref<any[]>([])
+    const isLoading = ref(false)
 
-        return Array.from({ length: 12 }, (_, i) => ({
-            id: i + 1,
-            name: `Material Name ${i + 1}`,
-            description: `High-quality building material for your construction needs. This product is durable and reliable.`,
-            category: categories[i % categories.length],
-            image: `/images/service-${(i % 4 + 1)}.webp` // Reusing existing service images
-        }))
-    })
+    const fetchMaterials = async () => {
+        isLoading.value = true
+        try {
+            const { data } = await api.getBuildingMaterials()
+            materials.value = data
+        } catch (error) {
+            console.error('Failed to fetch materials:', error)
+        } finally {
+            isLoading.value = false
+        }
+    }
 
-    const groupedMaterials = computed(() => {
-        const grouped: Record<string, any[]> = {}
-        materials.value.forEach(material => {
-            const cat = material.category || 'Uncategorized'
-            if (!grouped[cat]) {
-                grouped[cat] = []
-            }
-            grouped[cat].push(material)
-        })
-        return grouped
+    const fetchCategories = async () => {
+        try {
+            const { data } = await api.getCategories()
+            categories.value = data
+        } catch (error) {
+            console.error('Failed to fetch categories:', error)
+        }
+    }
+
+    onMounted(() => {
+        fetchMaterials()
+        fetchCategories()
     })
 
     return {
         materials,
-        groupedMaterials
+        categories,
+        isLoading,
+        fetchMaterials,
+        fetchCategories
     }
 }

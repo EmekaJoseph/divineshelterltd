@@ -9,7 +9,7 @@ interface PersonInterface {
 }
 
 export const useAuthStore = defineStore('authStore', () => {
-    const token = useCookie('wigrcMorgnas#Tkn', {
+    const token = useCookie('divine-shelter-ltd#Tkn', {
         maxAge: 3 * 24 * 60 * 60, // 3 days in seconds
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'strict'
@@ -23,9 +23,6 @@ export const useAuthStore = defineStore('authStore', () => {
 
     const login = (authToken: string) => {
         token.value = authToken;
-        setTimeout(() => {
-            window.location.reload();
-        }, 100);
     };
 
     function logout() {
@@ -37,13 +34,12 @@ export const useAuthStore = defineStore('authStore', () => {
         finally {
             token.value = null;
             person.value = null;
-            window.location.reload();
         }
     }
 
     async function getProfile() {
         try {
-            const { data } = await api.profile();
+            const { data } = await api.user();
             person.value = data;
             return data;
         } catch (error: any) {

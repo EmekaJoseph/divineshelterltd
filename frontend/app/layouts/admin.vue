@@ -1,5 +1,13 @@
 <template>
-  <div class="admin-layout">
+  <div class="admin-layout" :class="{ 'sidebar-open': isSidebarOpen }">
+    <!-- Sidebar Toggle (Mobile) -->
+    <button @click="isSidebarOpen = !isSidebarOpen" class="sidebar-toggle d-lg-none">
+      <i class="bi" :class="isSidebarOpen ? 'bi-x-lg' : 'bi-list'"></i>
+    </button>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div v-if="isSidebarOpen" class="sidebar-overlay d-lg-none" @click="isSidebarOpen = false"></div>
+
     <!-- Sidebar -->
     <aside class="sidebar">
       <div class="logo-section">
@@ -17,6 +25,20 @@
         </NuxtLink>
 
         <div class="nav-section-title">Content Management</div>
+        <NuxtLink to="/admin/projects" class="nav-link" active-class="active">
+          <i class="bi bi-briefcase"></i>
+          <span>Projects</span>
+        </NuxtLink>
+
+        <NuxtLink to="/admin/materials" class="nav-link" active-class="active">
+          <i class="bi bi-bricks"></i>
+          <span>Building Materials</span>
+        </NuxtLink>
+
+        <NuxtLink to="/admin/materials/categories" class="nav-link ps-5 small-link" active-class="active">
+          <i class="bi bi-tags"></i>
+          <span>Categories</span>
+        </NuxtLink>
 
         <NuxtLink to="/admin/blogs" class="nav-link" active-class="active">
           <i class="bi bi-newspaper"></i>
@@ -36,11 +58,6 @@
         </NuxtLink>
 
         <div class="nav-section-title">Configuration</div>
-
-        <NuxtLink to="/admin/company" class="nav-link" active-class="active">
-          <i class="bi bi-building"></i>
-          <span>Company Info</span>
-        </NuxtLink>
 
         <NuxtLink to="/admin/settings" class="nav-link" active-class="active">
           <i class="bi bi-gear"></i>
@@ -94,10 +111,11 @@ const route = useRoute();
 const pageTitle = computed(() => {
   const path = route.path;
   if (path === '/admin') return 'Dashboard';
+  if (path.includes('/projects')) return 'Project Portfolio';
+  if (path.includes('/materials')) return 'Building Materials';
   if (path.includes('/blogs')) return 'Blog Management';
   if (path.includes('/quotes')) return 'Quote Requests';
   if (path.includes('/visitors')) return 'Visitor Analytics';
-  if (path.includes('/company')) return 'Company Information';
   if (path.includes('/settings')) return 'Settings';
   return 'Admin Panel';
 });
@@ -106,6 +124,13 @@ const logout = () => {
   authStore.logout();
   router.push('/admin/login');
 }
+
+const isSidebarOpen = ref(false);
+
+// Close sidebar on route change (for mobile)
+watch(() => route.path, () => {
+  isSidebarOpen.value = false;
+});
 </script>
 
 <style scoped>
@@ -208,6 +233,17 @@ const logout = () => {
   background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
   color: #fff;
   box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.small-link {
+  font-size: 0.85rem;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  opacity: 0.8;
+}
+
+.small-link i {
+  font-size: 1rem;
 }
 
 .sidebar-footer {
@@ -327,5 +363,52 @@ const logout = () => {
 
 .sidebar::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 991px) {
+  .sidebar {
+    position: fixed;
+    left: -280px;
+    z-index: 1060;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar-open .sidebar {
+    left: 0;
+  }
+
+  .sidebar-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1070;
+    width: 45px;
+    height: 45px;
+    background: #1e293b;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1050;
+  }
+
+  .main-wrapper {
+    width: 100%;
+  }
+
+  .top-bar {
+    padding-left: 80px;
+  }
 }
 </style>

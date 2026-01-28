@@ -7,7 +7,7 @@ export default {
     },
 
     // Update company (protected)
-    updateCompany(id: number, data: any) {
+    updateCompany(data: any) {
         return $instance.put(`company`, data)
     },
 

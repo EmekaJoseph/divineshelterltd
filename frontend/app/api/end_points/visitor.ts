@@ -7,8 +7,8 @@ export default {
     },
 
     // Get all visitors (protected)
-    getVisitors() {
-        return $instance.get(`visitors`)
+    getVisitors(page: number = 1) {
+        return $instance.get(`visitors?page=${page}`)
     },
 
     // Get specific visitor (protected)

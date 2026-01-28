@@ -1,101 +1,107 @@
 <template>
-  <div>
-    <h2 class="mb-4 text-primary fw-bold">Settings</h2>
+    <div>
+        <h2 class="mb-4 text-primary fw-bold">Settings</h2>
 
-    <div class="row">
-      <!-- Company Information -->
-      <div class="col-lg-8 mb-4">
-        <div class="card border-0 shadow-sm">
-          <div class="card-header bg-white py-3">
-            <h5 class="mb-0">Company Information</h5>
-          </div>
-          <div class="card-body">
-             <form @submit.prevent="updateCompany">
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <label class="form-label">Company Name</label>
-                        <input type="text" v-model="company.name" class="form-control">
+        <div class="row">
+            <!-- Company Information -->
+            <div class="col-lg-8 mb-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-white py-3">
+                        <h5 class="mb-0">Company Information</h5>
                     </div>
-                    <div class="col-md-6">
-                        <label class="form-label">Phone</label>
-                        <input type="text" v-model="company.phone" class="form-control">
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label">Email</label>
-                        <input type="email" v-model="company.email" class="form-control">
-                    </div>
-                    <div class="col-md-12">
-                        <label class="form-label">Description</label>
-                        <textarea v-model="company.description" class="form-control" rows="3"></textarea>
-                    </div>
-                     <div class="col-md-12">
-                        <label class="form-label">Address</label>
-                        <input type="text" v-model="company.address" class="form-control">
-                    </div>
-                    <div class="col-12 mt-4">
-                        <h6 class="text-muted">Social Media</h6>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label"><i class="bi bi-facebook text-primary"></i> Facebook</label>
-                        <input type="text" v-model="company.facebook" class="form-control">
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label"><i class="bi bi-instagram text-danger"></i> Instagram</label>
-                        <input type="text" v-model="company.instagram" class="form-control">
-                    </div>
-                     <div class="col-md-6">
-                        <label class="form-label"><i class="bi bi-whatsapp text-success"></i> WhatsApp</label>
-                        <input type="text" v-model="company.whatsapp" class="form-control">
-                    </div>
-                     <div class="col-md-6">
-                        <label class="form-label"><i class="bi bi-twitter text-info"></i> Twitter</label>
-                        <input type="text" v-model="company.twitter" class="form-control">
-                    </div>
+                    <div class="card-body">
+                        <form @submit.prevent="updateCompany">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Company Name</label>
+                                    <input type="text" v-model="company.name" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Phone</label>
+                                    <input type="text" v-model="company.phone" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" v-model="company.email" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="form-label">Description</label>
+                                    <textarea v-model="company.description" class="form-control" rows="3"></textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="form-label">Address</label>
+                                    <input type="text" v-model="company.address" class="form-control">
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <h6 class="text-muted">Social Media</h6>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label"><i class="bi bi-facebook text-primary"></i>
+                                        Facebook</label>
+                                    <input type="text" v-model="company.facebook" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label"><i class="bi bi-instagram text-danger"></i>
+                                        Instagram</label>
+                                    <input type="text" v-model="company.instagram" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label"><i class="bi bi-whatsapp text-success"></i>
+                                        WhatsApp</label>
+                                    <input type="text" v-model="company.whatsapp" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label"><i class="bi bi-twitter text-info"></i> Twitter</label>
+                                    <input type="text" v-model="company.twitter" class="form-control">
+                                </div>
 
-                    <div class="col-12 mt-4 text-end">
-                        <button type="submit" class="btn btn-primary px-4" :disabled="savingCompany">
-                             <span v-if="savingCompany" class="spinner-border spinner-border-sm me-2"></span>
-                             Save Changes
-                        </button>
+                                <div class="col-12 mt-4 text-end">
+                                    <button type="submit" class="btn btn-primary px-4" :disabled="savingCompany">
+                                        <span v-if="savingCompany" class="spinner-border spinner-border-sm me-2"></span>
+                                        Save Changes
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-             </form>
-          </div>
+            </div>
+
+            <!-- Change Password -->
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-white py-3">
+                        <h5 class="mb-0">Security</h5>
+                    </div>
+                    <div class="card-body">
+                        <form @submit.prevent="changePassword">
+                            <div class="mb-3">
+                                <label class="form-label">Current Password</label>
+                                <input type="password" v-model="passwordForm.current_password" class="form-control"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">New Password</label>
+                                <input type="password" v-model="passwordForm.new_password" class="form-control"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Confirm Password</label>
+                                <input type="password" v-model="passwordForm.new_password_confirmation"
+                                    class="form-control" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-warning text-white" :disabled="changingPassword">
+                                    <span v-if="changingPassword" class="spinner-border spinner-border-sm me-2"></span>
+                                    Update Password
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <!-- Change Password -->
-      <div class="col-lg-4">
-        <div class="card border-0 shadow-sm">
-          <div class="card-header bg-white py-3">
-            <h5 class="mb-0">Security</h5>
-          </div>
-          <div class="card-body">
-            <form @submit.prevent="changePassword">
-                <div class="mb-3">
-                    <label class="form-label">Current Password</label>
-                    <input type="password" v-model="passwordForm.current_password" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">New Password</label>
-                    <input type="password" v-model="passwordForm.new_password" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Confirm Password</label>
-                    <input type="password" v-model="passwordForm.new_password_confirmation" class="form-control" required>
-                </div>
-                 <div class="d-grid">
-                    <button type="submit" class="btn btn-warning text-white" :disabled="changingPassword">
-                         <span v-if="changingPassword" class="spinner-border spinner-border-sm me-2"></span>
-                         Update Password
-                    </button>
-                </div>
-            </form>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -130,10 +136,8 @@ const loadCompany = async () => {
 const updateCompany = async () => {
     savingCompany.value = true;
     try {
-        // Since the backend does not take ID in update method but route has {id}, 
-        // we might need to pass a dummy ID or fix the API. 
-        // Based on analysis, ID is ignored in controller.
-        await companyApi.updateCompany(1, company.value); 
+        // ID is not needed as it targets a single-record model
+        await companyApi.updateCompany(company.value);
         Swal.fire('Success', 'Company information updated', 'success');
     } catch (error: any) {
         Swal.fire('Error', 'Failed to update company info', 'error');
@@ -154,7 +158,7 @@ const changePassword = async () => {
         Swal.fire('Success', 'Password changed successfully', 'success');
         passwordForm.value = { current_password: '', new_password: '', new_password_confirmation: '' };
     } catch (error: any) {
-         Swal.fire('Error', error.response?.data?.message || 'Failed to change password', 'error');
+        Swal.fire('Error', error.response?.data?.message || 'Failed to change password', 'error');
     } finally {
         changingPassword.value = false;
     }

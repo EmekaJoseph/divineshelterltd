@@ -39,10 +39,6 @@ import { useAuthStore } from '~/stores/auth-store';
 import api from '~/api/end_points/auth';
 import Swal from 'sweetalert2';
 
-definePageMeta({
-    middleware: 'auth'
-});
-
 const form = ref({
     email: '',
     password: ''
@@ -57,18 +53,23 @@ const handleLogin = async () => {
         const { data } = await api.login(form.value);
         authStore.login(data.token);
 
-        const { data: user } = await api.user();
-        authStore.person = user;
+        // Fetch user after token is stored (wait for profile)
+        const profileData = await authStore.getProfile();
 
-        Swal.fire({
-            icon: 'success',
-            title: 'Welcome Back!',
-            text: 'Logged in successfully',
-            timer: 1500,
-            showConfirmButton: false
-        });
+        if (profileData) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Welcome Back!',
+                text: 'Logged in successfully',
+                timer: 1500,
+                showConfirmButton: false
+            });
 
-        router.push('/admin');
+            // Ensure store state is synchronized before routing
+            setTimeout(() => {
+                window.location.href = '/admin'; // Force reload/sync
+            }, 1500);
+        }
     } catch (error: any) {
         Swal.fire({
             icon: 'error',

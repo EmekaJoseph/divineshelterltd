@@ -16,8 +16,8 @@ const getLoadingIndicator = () => {
 };
 
 // const hostURL = import.meta.env.VITE_API_URL;
-// const hostURL = 'http://localhost:8888';
-const hostURL = 'https://api.divineshelterltd.com';
+const hostURL = 'http://localhost:8888';
+// const hostURL = 'https://api.divineshelterltd.com';
 const apiURL = `${hostURL}/api/`;
 
 const getHeaders = (type: 'json' | 'form') => ({
@@ -38,7 +38,7 @@ const $instanceForm = createAxiosInstance('form');
 
 const setAuthAndStartProgress = (config: any) => {
     if (process.client) {
-        const token = Cookies.get('wigrcMorgnas#Tkn');
+        const token = Cookies.get('divine-shelter-ltd#Tkn');
         if (token) config.headers.Authorization = `Bearer ${token}`;
 
         // Start progress bar
