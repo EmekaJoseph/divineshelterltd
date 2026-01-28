@@ -1,4 +1,3 @@
-
 import api from '~/api';
 
 interface PersonInterface {
@@ -9,11 +8,11 @@ interface PersonInterface {
 }
 
 export const useAuthStore = defineStore('authStore', () => {
-    const token = useCookie('divine-shelter-ltd#Tkn', {
+    const cookieName = 'divine-shelter-ltd#Tkn';
+    const token = useCookie(cookieName, {
         maxAge: 3 * 24 * 60 * 60, // 3 days in seconds
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict'
-    })
+        sameSite: 'lax'
+    });
     const person = ref<PersonInterface | null>(null);
     const isGuest = ref<Boolean>(false);
 

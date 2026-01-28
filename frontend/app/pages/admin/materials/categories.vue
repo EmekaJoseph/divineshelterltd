@@ -1,9 +1,9 @@
 <template>
     <div class="admin-page-container">
-        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-center gap-3 mb-4">
             <div>
-                <NuxtLink to="/admin/materials"
-                    class="btn btn-link text-decoration-none p-0 text-muted mb-1 d-block small">
+                <h4 class="fw-bold text-dark d-lg-none mb-1">Categories</h4>
+                <NuxtLink to="/admin/materials" class="text-decoration-none small text-theme">
                     <i class="bi bi-arrow-left"></i> Back to Materials
                 </NuxtLink>
                 <p class="text-muted mb-0">Organize building materials into meaningful groups</p>
@@ -44,7 +44,7 @@
                     </div>
                     <h5 class="fw-bold mb-1 text-dark">{{ cat.name }}</h5>
                     <p class="small text-muted mb-0">Slug: <span class="badge bg-light text-muted fw-normal">{{ cat.slug
-                    }}</span></p>
+                            }}</span></p>
                 </div>
             </div>
         </div>

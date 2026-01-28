@@ -66,9 +66,9 @@ const handleLogin = async () => {
             });
 
             // Ensure store state is synchronized before routing
-            setTimeout(() => {
-                window.location.href = '/admin'; // Force reload/sync
-            }, 1500);
+            setTimeout(async () => {
+                await navigateTo('/admin'); // Move to dashboard
+            }, 500);
         }
     } catch (error: any) {
         Swal.fire({

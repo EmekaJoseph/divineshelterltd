@@ -78,7 +78,7 @@
       <!-- Top Bar -->
       <header class="top-bar">
         <div class="breadcrumb-section">
-          <h5 class="page-title mb-0">{{ pageTitle }}</h5>
+          <h5 class="page-title mb-0 d-none d-lg-block">{{ pageTitle }}</h5>
         </div>
         <div class="user-section">
           <div class="user-info">

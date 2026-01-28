@@ -1,7 +1,8 @@
 <template>
     <div class="admin-page-container">
-        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-center gap-3 mb-4">
             <div>
+                <h4 class="fw-bold text-dark d-lg-none mb-1">Building Materials</h4>
                 <p class="text-muted mb-0">Manage building materials inventory and catalog</p>
             </div>
             <NuxtLink to="/admin/materials/manage" class="btn btn-theme rounded-pill px-4">

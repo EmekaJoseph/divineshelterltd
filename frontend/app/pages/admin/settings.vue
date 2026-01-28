@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="mb-4 text-primary fw-bold">Settings</h2>
+        <h2 class="mb-4 text-primary fw-bold d-lg-none">Settings</h2>
 
         <div class="row">
             <!-- Company Information -->
@@ -91,7 +91,7 @@
                                     class="form-control" required>
                             </div>
                             <div class="d-grid">
-                                <button type="submit" class="btn btn-warning text-white" :disabled="changingPassword">
+                                <button type="submit" class="btn btn-theme" :disabled="changingPassword">
                                     <span v-if="changingPassword" class="spinner-border spinner-border-sm me-2"></span>
                                     Update Password
                                 </button>
