@@ -16,4 +16,15 @@ class Quote extends Model
         'project_details',
         'image_path'
     ];
+
+    /**
+     * Get the full URL for the quote attachment.
+     */
+    public function getImagePathAttribute($value)
+    {
+        if ($value && !str_starts_with($value, 'http')) {
+            return asset($value);
+        }
+        return $value;
+    }
 }

@@ -46,9 +46,10 @@
 
                                         <div class="col-md-12">
                                             <div class="form-label fw-semibold">Upload Image / Plan (Optional):</div>
-                                            <input type="file" class="form-control" accept="image/*,.pdf"
+                                            <input type="file" class="form-control" accept="image/*,.pdf,.doc,.docx"
                                                 @change="handleFileUpload" ref="fileInput" />
-                                            <div class="form-text small">Supported formats: JPG, PNG, PDF. Max size:
+                                            <div class="form-text small">Supported formats: JPG, PNG, PDF, DOC, DOCX.
+                                                Max size:
                                                 5MB.</div>
                                         </div>
 

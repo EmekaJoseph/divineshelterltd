@@ -51,7 +51,7 @@
               <i class="bi bi-chat-quote"></i>
             </div>
             <div class="stat-content">
-              <h6 class="stat-label">Quotes</h6>
+              <h6 class="stat-label">Quotes Requests</h6>
               <h3 class="stat-value">{{ stats.quotes }}</h3>
             </div>
           </div>
@@ -72,9 +72,9 @@
               <NuxtLink to="/admin/materials/manage" class="btn btn-info text-white">
                 <i class="bi bi-plus-circle me-2"></i> New Material
               </NuxtLink>
-              <NuxtLink to="/admin/blogs" class="btn btn-outline-primary">
+              <!-- <NuxtLink to="/admin/blogs" class="btn btn-outline-primary">
                 <i class="bi bi-newspaper me-2"></i> Blog Posts
-              </NuxtLink>
+              </NuxtLink> -->
               <NuxtLink to="/admin/quotes" class="btn btn-outline-warning">
                 <i class="bi bi-chat-quote me-2"></i> View Quotes
               </NuxtLink>

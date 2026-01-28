@@ -55,9 +55,9 @@
                                     </span>
                                 </td>
                                 <td>
-                                    <a v-if="quote.image_path" :href="quote.image_path" target="_blank"
+                                    <a v-if="quote.image_path" :href="quote.image_path" target="_blank" download
                                         class="badge bg-success-subtle text-success text-decoration-none border border-success-subtle px-2 py-1">
-                                        <i class="bi bi-file-earmark-image"></i> View File
+                                        <i class="bi bi-file-earmark-arrow-down"></i> Download File
                                     </a>
                                     <span v-else class="badge bg-light text-muted fw-normal">None</span>
                                 </td>
@@ -115,12 +115,12 @@
                             <div class="p-3 bg-light rounded-3 shadow-inner whitespace-pre-wrap">{{
                                 selectedQuote.project_details }}</div>
                         </div>
-                        <div class="col-12" v-if="selectedQuote.image_path">
+                        <!-- <div class="col-12" v-if="selectedQuote.image_path">
                             <label class="small fw-bold text-muted text-uppercase d-block mb-1">Uploaded
                                 Attachment</label>
                             <NuxtImg :src="selectedQuote.image_path" class="img-fluid rounded-3 border"
                                 style="max-height: 200px;" />
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 

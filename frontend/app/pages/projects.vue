@@ -6,9 +6,10 @@
 
         <div class="container mt-5">
             <div data-aos="fade-up" class="row g-3 justify-content-center">
-                <div class="text-center fs-5 fw-semibold text-muted text-between-lines mb-3">
-                    Recent Completed Projects 🏗️
-                </div>
+                <p class="text-muted mt-3 text-center">
+                    Our portfolio reflects both our construction expertise and our role as a trusted supplier of quality
+                    building materials.
+                </p>
 
                 <div v-for="project in projects" :key="project.id" class="col-md-6 col-lg-4">
                     <div class="card shadow hover-tiltY cursor-pointer h-100">

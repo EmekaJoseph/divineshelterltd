@@ -11,6 +11,17 @@ class BuildingMaterial extends Model
 
     protected $fillable = ['name', 'description', 'category_id', 'image'];
 
+    /**
+     * Get the full URL for the material image.
+     */
+    public function getImageAttribute($value)
+    {
+        if ($value && !str_starts_with($value, 'http')) {
+            return asset($value);
+        }
+        return $value;
+    }
+
     public function category()
     {
         return $this->belongsTo(BuildingMaterialCategory::class, 'category_id');

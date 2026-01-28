@@ -20,7 +20,7 @@ class QuoteController extends Controller
             'email' => 'required|email|max:255',
             'phone' => 'required|string|max:20',
             'project_details' => 'required|string',
-            'file' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5120' // 5MB max
+            'file' => 'nullable|file|mimes:jpg,jpeg,png,pdf,doc,docx,odt,rtf|max:5120' // 5MB max
         ]);
 
         $imagePath = null;

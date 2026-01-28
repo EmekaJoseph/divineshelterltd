@@ -26,6 +26,16 @@ export const useBuildingMaterials = () => {
         }
     }
 
+    const groupedMaterials = computed(() => {
+        const groups: { [key: string]: any[] } = {}
+        materials.value.forEach(item => {
+            const cat = item.category || 'General';
+            if (!groups[cat]) groups[cat] = [];
+            groups[cat].push(item);
+        });
+        return groups
+    })
+
     onMounted(() => {
         fetchMaterials()
         fetchCategories()
@@ -34,6 +44,7 @@ export const useBuildingMaterials = () => {
     return {
         materials,
         categories,
+        groupedMaterials,
         isLoading,
         fetchMaterials,
         fetchCategories

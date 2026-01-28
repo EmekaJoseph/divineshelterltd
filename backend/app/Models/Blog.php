@@ -15,4 +15,15 @@ class Blog extends Model
         'content',
         'blog_image',
     ];
+
+    /**
+     * Get the full URL for the blog image.
+     */
+    public function getBlogImageAttribute($value)
+    {
+        if ($value && !str_starts_with($value, 'http')) {
+            return asset($value);
+        }
+        return $value;
+    }
 }

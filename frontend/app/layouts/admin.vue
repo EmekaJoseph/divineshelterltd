@@ -40,10 +40,10 @@
           <span>Categories</span>
         </NuxtLink>
 
-        <NuxtLink to="/admin/blogs" class="nav-link" active-class="active">
+        <!-- <NuxtLink to="/admin/blogs" class="nav-link" active-class="active">
           <i class="bi bi-newspaper"></i>
           <span>Blog Posts</span>
-        </NuxtLink>
+        </NuxtLink> -->
 
         <NuxtLink to="/admin/quotes" class="nav-link" active-class="active">
           <i class="bi bi-chat-quote"></i>
@@ -113,7 +113,7 @@ const pageTitle = computed(() => {
   if (path === '/admin') return 'Dashboard';
   if (path.includes('/projects')) return 'Project Portfolio';
   if (path.includes('/materials')) return 'Building Materials';
-  if (path.includes('/blogs')) return 'Blog Management';
+  // if (path.includes('/blogs')) return 'Blog Management';
   if (path.includes('/quotes')) return 'Quote Requests';
   if (path.includes('/visitors')) return 'Visitor Analytics';
   if (path.includes('/settings')) return 'Settings';
