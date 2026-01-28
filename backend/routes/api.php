@@ -26,9 +26,12 @@ Route::delete('/visitors/{id}', [VisitorController::class, 'destroy'])->middlewa
 // Quote request routes (public)
 Route::post('/quotes', [QuoteController::class, 'store']);
 
+// Company (public)
+Route::get('company', [CompanyController::class, 'show']);
+
 // Company routes (protected with Sanctum)
 Route::middleware('auth:sanctum')->group(function () {
-    Route::get('company', [CompanyController::class, 'show']);
+    // Route::get('company', [CompanyController::class, 'show']);
     Route::put('company', [CompanyController::class, 'update']);
 
     // Blog routes (protected)
