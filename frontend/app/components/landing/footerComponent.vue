@@ -12,7 +12,7 @@
                         <strong>
                             {{ companyProfile.name }}
                         </strong>
-                        <small> {{ companyProfile.slogan }}</small>
+                        <small v-if="companyProfile.slogan"> {{ companyProfile.slogan }}</small>
                         <li class="list-group-item ">
                             <strong>Address:</strong>
                             <div>
@@ -28,11 +28,29 @@
                     </ul>
 
 
-                    <span class="d-flex gap-2">
-                        <i class="bi bi-facebook cursor-pointer"></i>
-                        <i class="bi bi-instagram cursor-pointer"></i>
-                        <i class="bi bi-linkedin cursor-pointer"></i>
-                    </span>
+                    <div class="d-flex gap-3 mt-3">
+                        <a v-if="companyProfile.facebook" :href="companyProfile.facebook" target="_blank"
+                            class="text-dark">
+                            <i class="bi bi-facebook fs-5"></i>
+                        </a>
+                        <a v-if="companyProfile.instagram" :href="companyProfile.instagram" target="_blank"
+                            class="text-dark">
+                            <i class="bi bi-instagram fs-5"></i>
+                        </a>
+                        <a v-if="companyProfile.whatsapp"
+                            :href="`https://wa.me/${companyProfile.whatsapp.replace('+', '')}`" target="_blank"
+                            class="text-dark">
+                            <i class="bi bi-whatsapp fs-5"></i>
+                        </a>
+                        <a v-if="companyProfile.twitter" :href="companyProfile.twitter" target="_blank"
+                            class="text-dark">
+                            <i class="bi bi-twitter-x fs-5"></i>
+                        </a>
+                        <a v-if="companyProfile.linkedin" :href="companyProfile.linkedin" target="_blank"
+                            class="text-dark">
+                            <i class="bi bi-linkedin fs-5"></i>
+                        </a>
+                    </div>
 
                 </div>
 

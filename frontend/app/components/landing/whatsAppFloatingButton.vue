@@ -9,13 +9,13 @@
 </template>
 
 <script setup lang="ts">
+const companyProfile = useCompanyProfileStore()
 
 function openWhatsapp() {
-    const phone = '+2348062138803';
-    const text = encodeURIComponent('Hello');
+    const phone = companyProfile.whatsapp.replace('+', '');
+    const text = encodeURIComponent('Hello Divine Shelter, I am interested in your services.');
     window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`, '_blank');
 }
-
 </script>
 
 <style scoped>

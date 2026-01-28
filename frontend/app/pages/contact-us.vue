@@ -23,29 +23,28 @@
             </section>
 
             <div class="row g-3 mt-3">
-
-                <div class="col-md-4">
-                    <div class="card h-100 bg-light-subtle shadow-sm">
-                        <div class="card-body">
-                            <div class="text-cente fw-bold">Address:</div>
-                            <div class="mt-3 text-cente small">
+                <div class="col-md-3">
+                    <div class="card h-100 bg-light-subtle shadow-sm border-0">
+                        <div class="card-body text-center">
+                            <div class="fw-bold text-theme"><i class="bi bi-geo-alt me-2"></i>Address</div>
+                            <div class="mt-3 small opacity-75">
                                 {{ companyProfile.address }}
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-4">
-                    <div class="card h-100 bg-light-subtle shadow-sm">
-                        <div class="card-body">
-                            <div class="text-cente fw-bold">Phone:</div>
-                            <div class="mt-3 text-cente small">
+                <div class="col-md-3">
+                    <div class="card h-100 bg-light-subtle shadow-sm border-0">
+                        <div class="card-body text-center">
+                            <div class="fw-bold text-theme"><i class="bi bi-telephone me-2"></i>Phone</div>
+                            <div class="mt-3 small opacity-75">
                                 {{ companyProfile.phone }}
                             </div>
 
-                            <div>
-                                <a class="text-theme fw-semibold" :href="`tel:${companyProfile.phone}`">
-                                    <i class=" bi bi-telephone me-1"></i>
+                            <div class="mt-2">
+                                <a class="text-theme fw-semibold small text-decoration-none"
+                                    :href="`tel:${companyProfile.phone}`">
                                     Tap to Call
                                 </a>
                             </div>
@@ -53,17 +52,17 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
-                    <div class="card h-100 bg-light-subtle shadow-sm">
-                        <div class="card-body">
-                            <div class="text-cente fw-bold">Email:</div>
-                            <div class="mt-3 text-cente small">
+                <div class="col-md-3">
+                    <div class="card h-100 bg-light-subtle shadow-sm border-0">
+                        <div class="card-body text-center">
+                            <div class="fw-bold text-theme"><i class="bi bi-envelope me-2"></i>Email</div>
+                            <div class="mt-3 small opacity-75">
                                 {{ companyProfile.email }}
                             </div>
 
-                            <div>
-                                <a class="text-theme fw-semibold" :href="`mailto:${companyProfile.email}`">
-                                    <i class="bi bi-envelope me-1"></i>
+                            <div class="mt-2">
+                                <a class="text-theme fw-semibold small text-decoration-none"
+                                    :href="`mailto:${companyProfile.email}`">
                                     Send Email
                                 </a>
                             </div>
@@ -71,9 +70,32 @@
                     </div>
                 </div>
 
-
-
-
+                <div class="col-md-3">
+                    <div class="card h-100 bg-light-subtle shadow-sm border-0">
+                        <div class="card-body text-center">
+                            <div class="fw-bold text-theme"><i class="bi bi-share me-2"></i>Socials</div>
+                            <div class="mt-3 d-flex gap-2 justify-content-center">
+                                <a v-if="companyProfile.facebook" :href="companyProfile.facebook" target="_blank"
+                                    class="btn btn-sm btn-light border">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                                <a v-if="companyProfile.instagram" :href="companyProfile.instagram" target="_blank"
+                                    class="btn btn-sm btn-light border">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                                <a v-if="companyProfile.linkedin" :href="companyProfile.linkedin" target="_blank"
+                                    class="btn btn-sm btn-light border">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                                <a v-if="companyProfile.whatsapp"
+                                    :href="`https://wa.me/${companyProfile.whatsapp.replace('+', '')}`" target="_blank"
+                                    class="btn btn-sm btn-light border">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
@@ -156,12 +178,6 @@
 <script setup lang="ts">
 
 const companyProfile = useCompanyProfileStore()
-
-const addressDetails = [
-    { title: "Address", info: "85 Great Portland Street First Floor London W1W, 7LT, United Kingdom.", footer: "support@WGRCP.com" },
-    { title: "Email", info: "Questions or queries? Get in touch!", footer: "support@WGRCP.com" },
-    { title: "Phone", info: "Mon-Fri from 8am to 5pm.", footer: "+234 806 2435 267" },
-]
 
 
 </script>
