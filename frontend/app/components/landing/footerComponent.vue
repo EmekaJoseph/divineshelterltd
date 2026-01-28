@@ -88,7 +88,7 @@
                     © {{ new Date().getFullYear() }} DIVINE SHELTER LTD. All Rights Reserved
                 </div>
 
-                <div class="float-lg-end text-muted mt-3 mt-lg-0" style="font-size: 7px;">
+                <div class="float-lg-end text-muted mt-3 mt-lg-0" style="font-size: 9px;">
                     Designed By Proffictech (08139590011)
                 </div>
             </div>
