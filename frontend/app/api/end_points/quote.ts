@@ -12,12 +12,12 @@ export default {
     },
 
     // Get specific quote (protected - admin)
-    getQuote(id: number) {
+    getQuote(id: string) {
         return $instance.get(`quotes/${id}`)
     },
 
     // Delete quote (protected - admin)
-    deleteQuote(id: number) {
+    deleteQuote(id: string) {
         return $instance.delete(`quotes/${id}`)
     },
 }

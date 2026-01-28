@@ -77,8 +77,9 @@ class BuildingMaterialController extends Controller
 
         if ($request->hasFile('image')) {
             // Delete old image
-            if ($material->image) {
-                $oldPath = public_path($material->image);
+            $oldImage = $material->getRawOriginal('image');
+            if ($oldImage) {
+                $oldPath = public_path($oldImage);
                 if (File::exists($oldPath)) {
                     File::delete($oldPath);
                 }
@@ -103,8 +104,9 @@ class BuildingMaterialController extends Controller
     {
         $material = BuildingMaterial::findOrFail($id);
         
-        if ($material->image) {
-            $path = public_path($material->image);
+        $image = $material->getRawOriginal('image');
+        if ($image) {
+            $path = public_path($image);
             if (File::exists($path)) {
                 File::delete($path);
             }

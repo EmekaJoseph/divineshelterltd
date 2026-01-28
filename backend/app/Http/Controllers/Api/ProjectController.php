@@ -63,8 +63,9 @@ class ProjectController extends Controller
 
         if ($request->hasFile('image')) {
             // Delete old image
-            if ($project->image) {
-                $oldPath = public_path($project->image);
+            $oldImage = $project->getRawOriginal('image');
+            if ($oldImage) {
+                $oldPath = public_path($oldImage);
                 if (File::exists($oldPath)) {
                     File::delete($oldPath);
                 }
@@ -89,8 +90,9 @@ class ProjectController extends Controller
     {
         $project = Project::findOrFail($id);
         
-        if ($project->image) {
-            $path = public_path($project->image);
+        $image = $project->getRawOriginal('image');
+        if ($image) {
+            $path = public_path($image);
             if (File::exists($path)) {
                 File::delete($path);
             }

@@ -77,8 +77,9 @@ class BlogController extends Controller
 
         if ($request->hasFile('blog_image')) {
             // Delete old image if exists
-            if ($blog->blog_image && File::exists(public_path($blog->blog_image))) {
-                File::delete(public_path($blog->blog_image));
+            $oldImage = $blog->getRawOriginal('blog_image');
+            if ($oldImage && File::exists(public_path($oldImage))) {
+                File::delete(public_path($oldImage));
             }
 
             $image = $request->file('blog_image');
@@ -106,8 +107,9 @@ class BlogController extends Controller
             return response()->json(['message' => 'Blog not found'], 404);
         }
 
-        if ($blog->blog_image && File::exists(public_path($blog->blog_image))) {
-            File::delete(public_path($blog->blog_image));
+        $image = $blog->getRawOriginal('blog_image');
+        if ($image && File::exists(public_path($image))) {
+            File::delete(public_path($image));
         }
 
         $blog->delete();

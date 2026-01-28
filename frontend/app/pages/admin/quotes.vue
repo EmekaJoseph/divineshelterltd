@@ -160,7 +160,7 @@ const viewQuote = (quote: any) => {
     selectedQuote.value = quote;
 };
 
-const confirmDelete = async (id: number) => {
+const confirmDelete = async (id: string) => {
     if (confirm('Permanently delete this request?')) {
         try {
             await api.deleteQuote(id);

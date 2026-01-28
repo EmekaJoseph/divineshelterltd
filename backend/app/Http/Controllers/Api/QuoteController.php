@@ -86,9 +86,13 @@ class QuoteController extends Controller
     {
         $quote = Quote::findOrFail($id);
         
-        // Delete associated image file if exists
-        if ($quote->image_path) {
-            Storage::disk('public')->delete($quote->image_path);
+        // Delete associated file if exists
+        $imagePath = $quote->getRawOriginal('image_path');
+        if ($imagePath) {
+            $path = public_path($imagePath);
+            if (\Illuminate\Support\Facades\File::exists($path)) {
+                \Illuminate\Support\Facades\File::delete($path);
+            }
         }
         
         $quote->delete();
