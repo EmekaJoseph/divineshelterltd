@@ -34,7 +34,7 @@ export default defineNuxtConfig({
   ],
 
   routeRules: {
-    // '/account/**': { ssr: false },
+    '/admin/**': { ssr: false },
 
     '/_nuxt/**': {
       headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }

@@ -100,7 +100,7 @@
 
 
 
-            <section class="mt-5">
+            <section class="mt-5 d-none">
                 <h3 class="text-center fw-bold">
                     Contact Us
                 </h3>

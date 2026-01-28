@@ -17,11 +17,12 @@ export const useAuthStore = defineStore('authStore', () => {
     const isGuest = ref<Boolean>(false);
 
     const isLoggedIn = computed(() => !!token.value);
-    const isAuthenticated = computed(() => isLoggedIn.value && !!person.value);
     const user = computed(() => person.value);
 
     const login = (authToken: string) => {
         token.value = authToken;
+
+        // window.location.reload();
     };
 
     function logout() {
@@ -54,7 +55,6 @@ export const useAuthStore = defineStore('authStore', () => {
         user,
         token: readonly(token),
         isLoggedIn,
-        isAuthenticated,
         login,
         logout,
         getProfile

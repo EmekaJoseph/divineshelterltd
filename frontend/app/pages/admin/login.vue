@@ -56,6 +56,8 @@ const handleLogin = async () => {
         // Fetch user after token is stored (wait for profile)
         const profileData = await authStore.getProfile();
 
+        await navigateTo('/admin'); // Move to dashboard
+
         if (profileData) {
             Swal.fire({
                 icon: 'success',
@@ -64,11 +66,6 @@ const handleLogin = async () => {
                 timer: 1500,
                 showConfirmButton: false
             });
-
-            // Ensure store state is synchronized before routing
-            setTimeout(async () => {
-                await navigateTo('/admin'); // Move to dashboard
-            }, 500);
         }
     } catch (error: any) {
         Swal.fire({

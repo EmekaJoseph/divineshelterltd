@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="admin-page-container">
     <div class="row g-4 mb-4">
       <!-- Stats Cards -->
       <div class="col-md-6 col-lg-3">
@@ -10,7 +10,8 @@
             </div>
             <div class="stat-content">
               <h6 class="stat-label">Total Visitors</h6>
-              <h3 class="stat-value">{{ stats.visitors }}</h3>
+              <h3 v-if="isLoading" class="skeleton skeleton-text w-50"></h3>
+              <h3 v-else class="stat-value">{{ stats.visitors }}</h3>
             </div>
           </div>
         </NuxtLink>
@@ -24,7 +25,8 @@
             </div>
             <div class="stat-content">
               <h6 class="stat-label">Projects</h6>
-              <h3 class="stat-value">{{ stats.projects }}</h3>
+              <h3 v-if="isLoading" class="skeleton skeleton-text w-50"></h3>
+              <h3 v-else class="stat-value">{{ stats.projects }}</h3>
             </div>
           </div>
         </NuxtLink>
@@ -38,7 +40,8 @@
             </div>
             <div class="stat-content">
               <h6 class="stat-label">Materials</h6>
-              <h3 class="stat-value">{{ stats.materials }}</h3>
+              <h3 v-if="isLoading" class="skeleton skeleton-text w-50"></h3>
+              <h3 v-else class="stat-value">{{ stats.materials }}</h3>
             </div>
           </div>
         </NuxtLink>
@@ -52,7 +55,8 @@
             </div>
             <div class="stat-content">
               <h6 class="stat-label">Quotes Requests</h6>
-              <h3 class="stat-value">{{ stats.quotes }}</h3>
+              <h3 v-if="isLoading" class="skeleton skeleton-text w-50"></h3>
+              <h3 v-else class="stat-value">{{ stats.quotes }}</h3>
             </div>
           </div>
         </NuxtLink>
@@ -72,9 +76,6 @@
               <NuxtLink to="/admin/materials/manage" class="btn btn-info text-white">
                 <i class="bi bi-plus-circle me-2"></i> New Material
               </NuxtLink>
-              <!-- <NuxtLink to="/admin/blogs" class="btn btn-outline-primary">
-                <i class="bi bi-newspaper me-2"></i> Blog Posts
-              </NuxtLink> -->
               <NuxtLink to="/admin/quotes" class="btn btn-outline-warning">
                 <i class="bi bi-chat-quote me-2"></i> View Quotes
               </NuxtLink>
@@ -101,7 +102,10 @@ const stats = ref({
   quotes: '0'
 });
 
+const isLoading = ref(false);
+
 const loadStats = async () => {
+  isLoading.value = true;
   try {
     const [vResp, pResp, mResp, qResp] = await Promise.all([
       api.getVisitors(),
@@ -116,6 +120,8 @@ const loadStats = async () => {
     stats.value.quotes = qResp.data.quotes?.length || 0;
   } catch (error) {
     console.error('Failed to load dashboard stats:', error);
+  } finally {
+    isLoading.value = false;
   }
 }
 
@@ -190,5 +196,26 @@ onMounted(() => {
 
 .card {
   border-radius: 16px;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 8px;
+}
+
+.skeleton-text {
+  height: 2rem;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
 }
 </style>
