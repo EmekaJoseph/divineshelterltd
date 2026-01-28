@@ -63,7 +63,7 @@
                                             Cancel
                                         </NuxtLink>
                                         <button type="submit"
-                                            class="btn btn-primary rounded-pill px-5 py-2 fw-bold shadow-sm transition-all"
+                                            class="btn btn-theme rounded-pill px-5 py-2 fw-bold shadow-sm transition-all"
                                             :disabled="isSaving">
                                             <span v-if="isSaving" class="spinner-border spinner-border-sm me-2"></span>
                                             {{ isEdit ? 'Update Post' : 'Publish Post' }}

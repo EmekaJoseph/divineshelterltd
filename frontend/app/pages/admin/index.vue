@@ -66,7 +66,7 @@
           <div class="card-body">
             <h5 class="card-title mb-4 fw-bold">Quick Actions</h5>
             <div class="d-flex flex-wrap gap-3">
-              <NuxtLink to="/admin/projects/manage" class="btn btn-primary">
+              <NuxtLink to="/admin/projects/manage" class="btn btn-theme">
                 <i class="bi bi-plus-circle me-2"></i> New Project
               </NuxtLink>
               <NuxtLink to="/admin/materials/manage" class="btn btn-info text-white">

@@ -41,13 +41,13 @@ class QuoteController extends Controller
             'image_path' => $imagePath
         ]);
 
-        // Send email notifications
-        $recipients = explode(',', env('QUOTE_NOTIFICATION_EMAILS', ''));
-        foreach ($recipients as $recipient) {
-            if (filter_var(trim($recipient), FILTER_VALIDATE_EMAIL)) {
-                \Mail::to(trim($recipient))->send(new \App\Mail\QuoteSubmitted($quote));
-            }
-        }
+       try {
+       // Send email notifications to the company email in DB
+        $companyEmail = \App\Models\Company::first()?->email ?? 'divineshelterltd@gmail.com';
+        \Mail::to($companyEmail)->send(new \App\Mail\QuoteSubmitted($quote));
+       } catch (\Throwable $th) {
+        //throw $th;
+       }
 
         return response()->json([
             'message' => 'Quote request submitted successfully',

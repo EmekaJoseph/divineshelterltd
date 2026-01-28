@@ -4,7 +4,7 @@
             <div>
                 <p class="text-muted mb-0">Manage your construction project portfolio</p>
             </div>
-            <NuxtLink to="/admin/projects/manage" class="btn btn-primary rounded-pill px-4">
+            <NuxtLink to="/admin/projects/manage" class="btn btn-theme rounded-pill px-4">
                 <i class="bi bi-plus-lg me-2"></i> Add New Project
             </NuxtLink>
         </div>
@@ -72,7 +72,7 @@
                                 </td>
                                 <td>
                                     <span class="text-muted"><i class="bi bi-geo-alt me-1"></i> {{ project.location
-                                        }}</span>
+                                    }}</span>
                                 </td>
                                 <td>
                                     <span class="text-muted small">{{ formatDate(project.created_at) }}</span>

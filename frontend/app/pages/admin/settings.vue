@@ -56,7 +56,7 @@
                                 </div>
 
                                 <div class="col-12 mt-4 text-end">
-                                    <button type="submit" class="btn btn-primary px-4" :disabled="savingCompany">
+                                    <button type="submit" class="btn btn-theme px-4" :disabled="savingCompany">
                                         <span v-if="savingCompany" class="spinner-border spinner-border-sm me-2"></span>
                                         Save Changes
                                     </button>

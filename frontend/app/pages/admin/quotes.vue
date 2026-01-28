@@ -125,7 +125,7 @@
                 </div>
 
                 <div class="mt-5 d-flex justify-content-end">
-                    <button @click="selectedQuote = null" class="btn btn-primary rounded-pill px-5">Close</button>
+                    <button @click="selectedQuote = null" class="btn btn-theme rounded-pill px-5">Close</button>
                 </div>
             </div>
         </div>

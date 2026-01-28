@@ -8,7 +8,7 @@
                 </NuxtLink>
                 <p class="text-muted mb-0">Organize building materials into meaningful groups</p>
             </div>
-            <button @click="openModal()" class="btn btn-primary rounded-pill px-4">
+            <button @click="openModal()" class="btn btn-theme rounded-pill px-4">
                 <i class="bi bi-plus-lg me-2"></i> Add Category
             </button>
         </div>
@@ -44,7 +44,7 @@
                     </div>
                     <h5 class="fw-bold mb-1 text-dark">{{ cat.name }}</h5>
                     <p class="small text-muted mb-0">Slug: <span class="badge bg-light text-muted fw-normal">{{ cat.slug
-                            }}</span></p>
+                    }}</span></p>
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@
                     <div class="d-flex gap-2 justify-content-end">
                         <button type="button" @click="showModal = false"
                             class="btn btn-light rounded-pill px-4">Cancel</button>
-                        <button type="submit" class="btn btn-primary rounded-pill px-4" :disabled="isSaving">
+                        <button type="submit" class="btn btn-theme rounded-pill px-4" :disabled="isSaving">
                             <span v-if="isSaving" class="spinner-border spinner-border-sm me-2"></span>
                             {{ activeCat ? 'Update' : 'Create' }}
                         </button>

@@ -4,7 +4,7 @@
             <div>
                 <p class="text-muted mb-0">Manage news updates and educational articles</p>
             </div>
-            <NuxtLink to="/admin/blogs/manage" class="btn btn-primary rounded-pill px-4">
+            <NuxtLink to="/admin/blogs/manage" class="btn btn-theme rounded-pill px-4">
                 <i class="bi bi-plus-lg me-2"></i> New Blog Post
             </NuxtLink>
         </div>
