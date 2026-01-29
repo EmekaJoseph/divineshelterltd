@@ -37,7 +37,7 @@ export const useBuildingMaterials = () => {
     })
 
     onMounted(() => {
-        fetchMaterials()
+        // fetchMaterials()
         fetchCategories()
     })
 

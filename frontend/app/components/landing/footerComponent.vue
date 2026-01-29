@@ -62,6 +62,11 @@
                                 {{ menu.title }}
                             </NuxtLink>
                         </li>
+                        <li class="list-group-item">
+                            <NuxtLink class=" text-decoration-none text-dark " to="/admin">
+                                Admin
+                            </NuxtLink>
+                        </li>
                     </ul>
 
                 </div>

@@ -99,7 +99,7 @@ definePageMeta({
     middleware: 'auth'
 });
 
-const { materials, isLoading, fetchMaterials } = useBuildingMaterials();
+const { materials, isLoading, fetchMaterials, } = useBuildingMaterials();
 
 const confirmDelete = async (item: any) => {
     if (confirm(`Are you sure you want to delete "${item.name}"?`)) {

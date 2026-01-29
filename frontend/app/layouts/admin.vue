@@ -14,7 +14,7 @@
         <div class="logo-icon">
           <i class="bi bi-building-fill"></i>
         </div>
-        <h4 class="logo-text">Divine Shelter</h4>
+        <h4 class="logo-text">Divine Shelter Ltd.</h4>
         <p class="logo-subtitle">Admin Panel</p>
       </div>
 

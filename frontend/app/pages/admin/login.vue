@@ -2,7 +2,7 @@
     <div class="login-wrapper">
         <div class="login-card">
             <div class="brand">
-                <h2>Divine Shelter</h2>
+                <h3>Divine Shelter Ltd</h3>
                 <p>Admin Portal</p>
             </div>
             <form @submit.prevent="handleLogin">
@@ -24,10 +24,14 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn-login" :disabled="loading">
+                <button type="submit" class="btn-theme btn btn-lg w-100 mt-4" :disabled="loading">
                     <span v-if="loading" class="spinner-border spinner-border-sm me-2"></span>
                     {{ loading ? 'Signing in...' : 'Sign In' }}
                 </button>
+                <div class="text-center">
+                    <!-- back to home -->
+                    <NuxtLink to="/" class="btn btn-link">Back to Home</NuxtLink>
+                </div>
             </form>
         </div>
     </div>
