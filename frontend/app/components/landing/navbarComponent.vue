@@ -3,8 +3,11 @@
         <div class="container">
             <NuxtLink to="/" class="navbar-brand d-flex align-items-center text-theme"
                 :class="{ 'text-white': route.path == '/' && !headerDropped }">
-                <NuxtImg src="/images/divine-shelter-logo.webp" width="53" alt="site_logo" />
-                <span class="fw-medium ms-1 text-uppercase small ">Divine Shelter Limited</span>
+                <NuxtImg src="/images/divine-shelter-logo.webp" :width="65" alt="site_logo" class="logo-img" />
+                <div class="d-flex flex-column ms-2 lh-1 text-start">
+                    <span class="fw-bold text-uppercase brand-name">Divine Shelter Limited</span>
+                    <span class="brand-tagline mt-1">Leaders in Alternative Building Technology</span>
+                </div>
             </NuxtLink>
             <button class="navbar-toggler border-0" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas"
                 aria-controls="menuOffcanvas" type="button">
@@ -120,5 +123,33 @@ onMounted(() => {
 
 .bg-dark-faded {
     background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Branding Styles */
+.brand-name {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.brand-tagline {
+    font-size: 0.6rem;
+    font-weight: 500;
+    opacity: 0.9;
+    letter-spacing: 0.2px;
+}
+
+@media (max-width: 576px) {
+    .logo-img {
+        width: 55px !important;
+        /* Slightly smaller on very small screens */
+    }
+
+    .brand-name {
+        font-size: 1.1rem;
+    }
+
+    .brand-tagline {
+        font-size: 0.7rem;
+    }
 }
 </style>
