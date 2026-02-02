@@ -30,9 +30,19 @@
                             <div class="card shadow-sm h-100 hover-tiltY">
                                 <NuxtImg format="webp" loading="lazy" class="card-img-top object-fit-cover"
                                     style="height: 200px;" :src="material.image" :alt="material.name" />
-                                <div class="card-body">
+                                <div class="card-body d-flex flex-column">
                                     <h5 class="fw-bold text-theme">{{ material.name }}</h5>
-                                    <p class="text-muted small mb-0">{{ material.description }}</p>
+                                    <p class="text-muted small mb-3 flex-grow-1">
+                                        {{ material.description?.length > 100 ? material.description.substring(0, 100) +
+                                        '...' : material.description }}
+                                    </p>
+                                    <div v-if="material.description?.length > 100" class="mt-auto">
+                                        <button class="btn btn-sm btn-outline-theme rounded-pill px-3"
+                                            data-bs-toggle="modal" data-bs-target="#buildingMaterialModal"
+                                            @click="selectedMaterial = material">
+                                            Read More
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -43,11 +53,14 @@
             </div>
         </div>
 
+
+        <BuildingMaterialModal :material="selectedMaterial" />
     </nuxt-layout>
 </template>
 
 <script lang="ts" setup>
 const { groupedMaterials } = useBuildingMaterials()
+const selectedMaterial = ref(null)
 </script>
 
 <style scoped>

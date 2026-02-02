@@ -14,7 +14,7 @@ class BuildingMaterialController extends Controller
      */
     public function index()
     {
-        $materials = BuildingMaterial::with('category')->latest()->get()->map(function ($material) {
+        $materials = BuildingMaterial::with('category')->latest()->take(50)->get()->map(function ($material) {
             $material->category_name = $material->category ? $material->category->name : null;
             $data = $material->toArray();
             $data['category'] = $data['category_name'];

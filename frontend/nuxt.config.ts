@@ -74,7 +74,7 @@ export default defineNuxtConfig({
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: 'https://divineshelterltd.com/' },
         { property: 'og:image', content: 'https://divineshelterltd.com/android-chrome-512x512.png' },
-        { property: 'og:keywords', content: 'Building construction services, Building materials supply, Hydraform bricks and alternative building systems, Project Management, Training, ' },
+        { property: 'og:keywords', content: 'Divine shelter construction services, Building construction services, Building materials supply, Hydraform bricks and alternative building systems, Project Management, Training, ' },
 
         // Twitter meta tags
         // { name: 'twitter:card', content: 'summary_large_image' },
@@ -83,7 +83,7 @@ export default defineNuxtConfig({
         // { name: 'twitter:image', content: 'https://divineshelterltd.com/android-chrome-512x512.png' },
 
         // Fallback description for search engines
-        { name: 'description', content: 'Professional construction firm & materials supplier. We build durable, cost-efficient structures using Hydraform brick technology and offer expert training. Get a quote for your project or material needs today.' }
+        { name: 'description', content: 'Divine Shelter Ltd: A professional construction and building materials firm. We deliver durable, cost-efficient projects using innovative Hydraform brick technology and provide expert training. Your trusted partner for quality construction from start to finish.' },
       ]
     }
   },

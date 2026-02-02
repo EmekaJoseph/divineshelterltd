@@ -15,14 +15,16 @@ const route = useRoute()
 const title = computed(() => {
     const path = route.path.replace(/^\/+|\/+$/g, '')
 
-    if (!path) return 'Divine Shelter LTD | Home'
+    if (!path) return 'Divine Shelter Construction Services Ltd. | Construction, Hydraform Bricks, Building Materials, and Real Estate Development'
 
     const formattedPath = path
         .split(/[-\/]/)
         .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
         .join(' ')
 
-    return `Divine Shelter LTD | ${formattedPath}`
+    return `Divine Shelter Construction Services Ltd. | Construction, Hydraform Bricks, Building Materials, and Real Estate Development`
+
+    // return `Divine Shelter LTD | ${formattedPath}`
 })
 
 useSeoMeta({
