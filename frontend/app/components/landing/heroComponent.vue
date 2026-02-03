@@ -61,7 +61,7 @@ const slideItems: { header: string, info: string, image: string }[] = [
 
     {
         header: ``,
-        info: `Premium materials engineered for lasting strength and performance`,
+        info: `Durable building solutions designed to maximize value and minimize long-term expenses.`,
         image: `/images/hero3.webp`
     },
 

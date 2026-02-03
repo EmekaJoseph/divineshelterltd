@@ -4,7 +4,7 @@
         <!-- Header -->
         <div class="offcanvas-header justify-content-between align-items-center p-4">
             <div class="d-flex align-items-center">
-                <NuxtImg src="/images/divine-shelter-logo.webp" :width="50" alt="site_logo" />
+                <NuxtImg src="/images/divine-shelter-logo.jpg" :width="50" alt="site_logo" />
                 <div class="d-flex flex-column ms-2 lh-1 text-start">
                     <span class="fw-bold text-dark text-uppercase small ls-1">Divine Shelter Ltd.</span>
                     <span class="text-muted" style="font-size: 0.6rem; font-weight: 500;">Leaders in Alternative

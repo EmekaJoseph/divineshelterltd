@@ -3,7 +3,7 @@
         <div class="container">
             <NuxtLink to="/" class="navbar-brand d-flex align-items-center text-theme"
                 :class="{ 'text-white': route.path == '/' && !headerDropped }">
-                <NuxtImg src="/images/divine-shelter-logo.webp" :width="65" alt="site_logo" class="logo-img" />
+                <NuxtImg src="/images/divine-shelter-logo.jpg" :width="65" alt="site_logo" class="logo-img" />
                 <div class="d-flex flex-column ms-2 lh-1 text-start">
                     <span class="fw-bold text-uppercase brand-name">Divine Shelter Limited</span>
                     <span class="brand-tagline mt-1">Leaders in Alternative Building Technology</span>

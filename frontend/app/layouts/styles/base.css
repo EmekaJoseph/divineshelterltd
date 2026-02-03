@@ -44,9 +44,10 @@ body {
   /* color: var(--vt-c-black-soft) !important; */
   background: var(--vt-c-white);
   transition: color 0.5s, background-color 0.5s;
-  /* line-height: 1.6; */
+  line-height: 1.6;
    font-family:  "Oswald", sans-serif;
-  /* font-optical-sizing: auto; */
+   font-optical-sizing: auto;
+   /* font-weight: 400; */
   font-size: 18px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
