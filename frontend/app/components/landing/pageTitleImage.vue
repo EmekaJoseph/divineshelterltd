@@ -6,7 +6,7 @@
             <div class="shape shape-2"></div>
         </div>
 
-        <div class="container position-relative z-1 text-center py-4">
+        <div class="container position-relative z-1 text-center mt-5 py-0">
             <h1 class="display-4 fw-bold text-white mb-0 animate-fade-in">
                 <slot />
             </h1>

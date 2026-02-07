@@ -6,8 +6,8 @@
 
                     <!-- <div class="bg-overlay"></div> -->
                     <div class="container">
-                        <div class="col-md-4">
-                            <div class="card border-0 animate__animated">
+                        <div class="col-md-5">
+                            <div class="card border-0 animate__animated mt-lg-5">
                                 <div class="card-body info-text">
                                     {{ info }}
                                 </div>
@@ -95,10 +95,19 @@ const slideItems: { header: string, info: string, image: string }[] = [
     z-index: 2;
 }
 
+
+
+.card {
+    background: transparent !important;
+    border: none !important;
+}
+
 .info-text {
     font-size: 40px;
     font-weight: 600;
     line-height: 1;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
 }
 
 
@@ -115,10 +124,10 @@ const slideItems: { header: string, info: string, image: string }[] = [
     }
 
     .card {
-        /* background: transparent; */
-        background: rgba(27, 9, 9, 0.406);
+        background: transparent !important;
         color: #fff;
         text-align: center;
+        box-shadow: none !important;
     }
 
 }

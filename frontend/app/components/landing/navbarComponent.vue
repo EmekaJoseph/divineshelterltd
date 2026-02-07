@@ -91,8 +91,13 @@ onMounted(() => {
 
 .nav-item .router-link-active,
 .nav-item .router-link-exact-active {
-    font-weight: bolder;
+    /* font-weight: bolder; */
+    font-weight: 400;
     color: var(--theme-color);
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--theme-color);
     /* border-bottom: 1px solid var(--theme-color) !important; */
 }
 
@@ -145,11 +150,11 @@ onMounted(() => {
     }
 
     .brand-name {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .brand-tagline {
-        font-size: 0.7rem;
+        font-size: 0.5rem;
     }
 }
 </style>
