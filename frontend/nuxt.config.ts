@@ -34,6 +34,18 @@ export default defineNuxtConfig({
   ],
 
   routeRules: {
+    // Cache main pages (shorter duration for content that might change)
+    '/': {
+      headers: { 'Cache-Control': 'public, max-age=3600' } // 1 hour
+    },
+    '/about-us': {
+      headers: { 'Cache-Control': 'public, max-age=3600' }
+    },
+    '/services/**': {
+      headers: { 'Cache-Control': 'public, max-age=3600' }
+    },
+
+
     '/admin/**': { ssr: false },
 
     '/_nuxt/**': {
@@ -58,7 +70,25 @@ export default defineNuxtConfig({
   //     crawlLinks: false,
   //   }
   // },
-  nitro: { preset: 'static' },
+  nitro: {
+    preset: 'static',
+    prerender: {
+      crawlLinks: true, // Automatically find and prerender all linked pages
+      routes: [
+        '/', // Explicitly add important routes
+        '/about-us',
+        '/services/building-construction',
+        '/services/hydraform-alternative-building-systems',
+        '/services/project-management',
+        '/services/real-estates',
+        '/services/training',
+        '/building-materials',
+        '/contact-us',
+        '/projects',
+        '/request-a-quote'
+      ]
+    }
+  },
 
   app: {
     buildAssetsDir: '/_assets/',
